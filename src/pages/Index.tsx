@@ -83,32 +83,32 @@ const Index = () => {
 
   const diferenciais = [
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#1B3461" strokeWidth="1.8"/><path d="M12 8v8M8 12h8" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="white" strokeWidth="1.8"/><path d="M12 8v8M8 12h8" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
       title: "Cobertura Completa",
       desc: "Internações, cirurgias e tratamentos de alta complexidade"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#1B3461" strokeWidth="1.8"/><path d="M8 21h8M12 17v4" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="1.8"/><path d="M8 21h8M12 17v4" stroke="white" strokeWidth="1.8" strokeLinecap="round"/></svg>,
       title: "Atendimento Virtual",
       desc: "Telemedicina e atendimento presencial integrados"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" stroke="#1B3461" strokeWidth="1.8"/><circle cx="7" cy="7" r="1.5" fill="#1B3461"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" stroke="white" strokeWidth="1.8"/><circle cx="7" cy="7" r="1.5" fill="white"/></svg>,
       title: "Isenção de Coparticipação",
       desc: "Reduz o custo direto ao servidor"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B3461" strokeWidth="1.8"/><path d="M12 6v12M9 9.5C9 8.1 10.3 7 12 7s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5S10.3 17 12 17s3-1.1 3-2.5" stroke="#1B3461" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8"/><path d="M12 6v12M9 9.5C9 8.1 10.3 7 12 7s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5S10.3 17 12 17s3-1.1 3-2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>,
       title: "Subsídio Governamental",
       desc: "Valor final reduzido para o servidor"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B3461" strokeWidth="1.8"/><path d="M8.5 12l2.5 2.5 4.5-4.5" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8"/><path d="M8.5 12l2.5 2.5 4.5-4.5" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
       title: "Sem Taxa de Adesão",
       desc: "Nenhum custo adicional para aderir"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#1B3461" strokeWidth="1.8"/><path d="M9 12h6M9 16h4" stroke="#1B3461" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="white" strokeWidth="1.8" strokeLinecap="round"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="white" strokeWidth="1.8"/><path d="M9 12h6M9 16h4" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>,
       title: "Gestão Personalizada",
       desc: "Suporte dedicado sob medida para o órgão"
     },
@@ -274,11 +274,15 @@ const Index = () => {
                 ))}
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105 text-center">
-                  Quero Informações para Meu Órgão
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-[#F97316] hover:bg-[#ea6c0a] text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg transition-all hover:scale-105 hover-glow whitespace-nowrap">
+                  Quero mais informações
                 </a>
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="border-2 border-white/60 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all text-center">
-                  Falar com Consultor Especializado
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg transition-all hover:scale-105 whitespace-nowrap">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 flex-shrink-0" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.132.558 4.13 1.532 5.862L.057 23.882l6.204-1.448A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.987-1.358l-.358-.214-3.686.861.878-3.593-.234-.369A9.818 9.818 0 1112 21.818z"/>
+                  </svg>
+                  Falar com consultor
                 </a>
               </div>
               <p className="text-white/50 text-xs mt-3 flex items-center gap-2">
@@ -332,18 +336,18 @@ const Index = () => {
       </div>
 
       {/* ===== DIFERENCIAIS ===== */}
-      <section className="py-16" style={{ backgroundColor: "#F0F5FF" }}>
+      <section className="py-16" style={{ background: 'linear-gradient(135deg, #0D1F4A 0%, #1B3461 100%)' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Diferenciais que só a GEAP oferece</h2>
-          <p className="text-gray-500 mt-3 text-center">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-white text-center">Diferenciais que só a GEAP oferece</h2>
+          <p className="text-white/60 mt-3 text-center">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-14">
             {diferenciais.map((d, i) => (
-              <div key={d.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} text-center p-6`}>
-                <div className="bg-white shadow-md rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-5">
+              <div key={d.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift group flex flex-col items-center text-center p-7 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#F97316]/40 transition-all duration-300 cursor-default`}>
+                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-5 group-hover:bg-[#F97316]/20 transition-colors duration-300">
                   {d.icon}
                 </div>
-                <h3 className="font-display font-bold text-[#1B3461] text-base mb-2">{d.title}</h3>
-                <p className="text-gray-600 text-sm">{d.desc}</p>
+                <h3 className="font-bold text-white text-base mb-2">{d.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -445,8 +449,13 @@ const Index = () => {
       </section>
 
       {/* ===== POR QUE PLAN10 ===== */}
-      <section className="bg-white py-24">
+      <section className="py-24" style={{ backgroundColor: '#F0F5FF' }}>
         <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-12 bg-[#F97316]" />
+            <span className="text-[#F97316] font-semibold text-sm tracking-widest uppercase">Parceiro Credenciado GEAP</span>
+            <div className="h-px w-12 bg-[#F97316]" />
+          </div>
           <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
           <p className="text-gray-500 mt-3 text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="grid md:grid-cols-3 gap-6 mt-14 max-w-4xl mx-auto">
@@ -455,7 +464,7 @@ const Index = () => {
               { num: "+200", label: "Órgãos Atendidos", desc: "Parcerias com ministérios, autarquias e tribunais" },
               { num: "+50 Mil", label: "Vidas Atendidas", desc: "Milhares de servidores e seus familiares protegidos" },
             ].map((m) => (
-              <div key={m.label} className="scroll-reveal rounded-2xl p-8 text-center" style={{ backgroundColor: "#F0F5FF" }}>
+              <div key={m.label} className="scroll-reveal rounded-2xl p-8 text-center bg-white shadow-md border border-[#1B3461]/10">
                 <p className="text-5xl font-black text-[#F97316]">{m.num}</p>
                 <p className="font-bold text-[#1B3461] mt-2">{m.label}</p>
                 <p className="text-gray-500 text-sm mt-2">{m.desc}</p>
@@ -501,7 +510,7 @@ const Index = () => {
           </p>
 
           {/* Depoimento */}
-          <div className="max-w-2xl mx-auto mt-10 bg-[#F0F5FF] border border-[#1B3461]/10 rounded-2xl p-8">
+          <div className="max-w-2xl mx-auto mt-10 bg-white rounded-2xl border-t-4 border-[#F97316] shadow-md border-x border-b border-x-[#1B3461]/10 border-b-[#1B3461]/10 p-8">
             <svg className="w-8 h-8 text-[#F97316]/30 mb-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
             <p className="text-[#1B3461] text-base leading-relaxed italic">
               "A parceria com a Plan10 Saúde foi decisiva para viabilizarmos o plano de saúde dos nossos servidores de forma ágil e sem burocracia. O suporte jurídico e a comunicação interna foram impecáveis — em menos de quatro meses tínhamos o convênio formalizado e os servidores já aderindo."
