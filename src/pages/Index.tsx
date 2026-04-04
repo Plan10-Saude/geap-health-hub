@@ -124,31 +124,17 @@ const Index = () => {
 
       {/* ===== HEADER ===== */}
       <header className="sticky top-0 z-50" style={{ background: "linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)" }}>
-        <div className="flex items-center justify-between px-8 h-20 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center gap-16 px-8 h-20 max-w-7xl mx-auto">
           <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-14 w-auto object-contain" />
-          <div className="hidden md:block">{GeapLogoSvg}</div>
-          <div className="flex items-center gap-6">
-            <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="hidden md:block h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] text-white font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-[#ea6c0a] transition">
-              Falar com Consultor
-            </a>
-          </div>
+          {GeapLogoSvg}
+          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
         </div>
       </header>
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)" }}>
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 40" fill="none" stroke="white" strokeWidth="0.5" />
-                <path d="M 0 0 L 40 40" fill="none" stroke="white" strokeWidth="0.3" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ background: "radial-gradient(ellipse at 30% 20%, #2563EB44 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, #1B5FAA55 0%, transparent 50%), linear-gradient(135deg, #050D1F 0%, #0D1F4A 40%, #1B3461 70%, #1B5FAA 100%)" }}>
+        <div className="w-96 h-96 rounded-full bg-[#F97316]/10 blur-3xl absolute top-10 left-10 pointer-events-none z-0" />
+        <div className="w-80 h-80 rounded-full bg-[#1B5FAA]/30 blur-3xl absolute bottom-10 right-10 pointer-events-none z-0" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
           <span className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/50 text-[#F97316] rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
             ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
