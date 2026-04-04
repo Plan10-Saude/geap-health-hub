@@ -124,15 +124,10 @@ const Index = () => {
 
       {/* ===== HEADER ===== */}
       <header className="sticky top-0 z-50" style={{ background: "linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)" }}>
-        <div className="flex items-center justify-between px-8 h-20 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center gap-16 px-8 h-20 max-w-7xl mx-auto">
           <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-14 w-auto object-contain" />
-          <div className="hidden md:block">{GeapLogoSvg}</div>
-          <div className="flex items-center gap-6">
-            <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="hidden md:block h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] text-white font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-[#ea6c0a] transition">
-              Falar com Consultor
-            </a>
-          </div>
+          {GeapLogoSvg}
+          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
         </div>
       </header>
 
