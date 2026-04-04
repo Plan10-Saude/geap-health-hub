@@ -176,21 +176,21 @@ const Index = () => {
       </section>
 
       {/* ===== BARRA DE PROVA SOCIAL ===== */}
-      <div className="bg-[#F97316] py-5 px-8">
-        <div className="flex justify-center items-center gap-6 md:gap-12 flex-wrap">
-          <div className="flex items-center gap-3 text-white">
-            <span className="font-black text-2xl">+15 Anos</span>
-            <span className="text-sm font-medium opacity-90">de experiência no setor público</span>
+      <div className="bg-[#F97316] py-6 px-6 w-full overflow-hidden">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+          <div className="text-center text-white">
+            <span className="font-black text-3xl block">+15 Anos</span>
+            <span className="text-sm opacity-90">de experiência no setor público</span>
           </div>
-          <div className="hidden md:block h-8 w-px bg-white/30" />
-          <div className="flex items-center gap-3 text-white">
-            <span className="font-black text-2xl">+200 Órgãos</span>
-            <span className="text-sm font-medium opacity-90">conveniados em todo o Brasil</span>
+          <div className="hidden sm:block h-8 w-px bg-white/30" />
+          <div className="text-center text-white">
+            <span className="font-black text-3xl block">+200 Órgãos</span>
+            <span className="text-sm opacity-90">conveniados em todo o Brasil</span>
           </div>
-          <div className="hidden md:block h-8 w-px bg-white/30" />
-          <div className="flex items-center gap-3 text-white">
-            <span className="font-black text-2xl">+50 Mil Vidas</span>
-            <span className="text-sm font-medium opacity-90">de servidores protegidos</span>
+          <div className="hidden sm:block h-8 w-px bg-white/30" />
+          <div className="text-center text-white">
+            <span className="font-black text-3xl block">+50 Mil Vidas</span>
+            <span className="text-sm opacity-90">de servidores protegidos</span>
           </div>
         </div>
       </div>
