@@ -83,32 +83,32 @@ const Index = () => {
 
   const diferenciais = [
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#1B3461" strokeWidth="1.8"/><path d="M12 8v8M8 12h8" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="white" strokeWidth="1.8"/><path d="M12 8v8M8 12h8" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
       title: "Cobertura Completa",
       desc: "Internações, cirurgias e tratamentos de alta complexidade"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#1B3461" strokeWidth="1.8"/><path d="M8 21h8M12 17v4" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="1.8"/><path d="M8 21h8M12 17v4" stroke="white" strokeWidth="1.8" strokeLinecap="round"/></svg>,
       title: "Atendimento Virtual",
       desc: "Telemedicina e atendimento presencial integrados"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" stroke="#1B3461" strokeWidth="1.8"/><circle cx="7" cy="7" r="1.5" fill="#1B3461"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" stroke="white" strokeWidth="1.8"/><circle cx="7" cy="7" r="1.5" fill="white"/></svg>,
       title: "Isenção de Coparticipação",
       desc: "Reduz o custo direto ao servidor"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B3461" strokeWidth="1.8"/><path d="M12 6v12M9 9.5C9 8.1 10.3 7 12 7s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5S10.3 17 12 17s3-1.1 3-2.5" stroke="#1B3461" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8"/><path d="M12 6v12M9 9.5C9 8.1 10.3 7 12 7s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5S10.3 17 12 17s3-1.1 3-2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>,
       title: "Subsídio Governamental",
       desc: "Valor final reduzido para o servidor"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B3461" strokeWidth="1.8"/><path d="M8.5 12l2.5 2.5 4.5-4.5" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8"/><path d="M8.5 12l2.5 2.5 4.5-4.5" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
       title: "Sem Taxa de Adesão",
       desc: "Nenhum custo adicional para aderir"
     },
     {
-      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#1B3461" strokeWidth="1.8"/><path d="M9 12h6M9 16h4" stroke="#1B3461" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="white" strokeWidth="1.8" strokeLinecap="round"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="white" strokeWidth="1.8"/><path d="M9 12h6M9 16h4" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>,
       title: "Gestão Personalizada",
       desc: "Suporte dedicado sob medida para o órgão"
     },
