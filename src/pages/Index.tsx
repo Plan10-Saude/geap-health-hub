@@ -119,7 +119,7 @@ const Index = () => {
   const inputClass = "border border-gray-200 rounded-xl px-4 py-3 w-full text-sm focus:border-[#1B5FAA] focus:ring-2 focus:ring-[#1B5FAA]/20 outline-none transition font-body";
 
   return (
-    <div className="font-body">
+    <div className="font-body overflow-x-hidden w-full">
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');`}</style>
 
       {/* ===== HEADER ===== */}
@@ -133,8 +133,8 @@ const Index = () => {
 
       {/* ===== HERO ===== */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ background: "radial-gradient(ellipse at 30% 20%, #2563EB44 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, #1B5FAA55 0%, transparent 50%), linear-gradient(135deg, #050D1F 0%, #0D1F4A 40%, #1B3461 70%, #1B5FAA 100%)" }}>
-        <div className="w-96 h-96 rounded-full bg-[#F97316]/10 blur-3xl absolute top-10 left-10 pointer-events-none z-0" />
-        <div className="w-80 h-80 rounded-full bg-[#1B5FAA]/30 blur-3xl absolute bottom-10 right-10 pointer-events-none z-0" />
+        <div className="w-72 h-72 max-w-[50vw] rounded-full bg-[#F97316]/10 blur-3xl absolute top-10 left-10 pointer-events-none z-0" />
+        <div className="w-64 h-64 max-w-[50vw] rounded-full bg-[#1B5FAA]/30 blur-3xl absolute bottom-10 right-10 pointer-events-none z-0" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
           <span className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/50 text-[#F97316] rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
             ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
