@@ -409,8 +409,8 @@ const Index = () => {
                   Concordo com a Política de Privacidade e autorizo o tratamento dos meus dados conforme a Lei Geral de Proteção de Dados (LGPD).
                 </label>
               </div>
-              <button type="submit" className="w-full mt-6 bg-[#1B3461] hover:bg-[#0D1F4A] text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-3 transition shadow-lg">
-                ✉️ Solicitar Contato
+              <button type="submit" className="w-full mt-6 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-3 transition shadow-lg">
+                ✉️ Quero Minha Apresentação Gratuita
               </button>
             </form>
           </div>
