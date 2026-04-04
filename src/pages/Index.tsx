@@ -449,8 +449,13 @@ const Index = () => {
       </section>
 
       {/* ===== POR QUE PLAN10 ===== */}
-      <section className="bg-white py-24">
+      <section className="py-24" style={{ backgroundColor: '#F0F5FF' }}>
         <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-12 bg-[#F97316]" />
+            <span className="text-[#F97316] font-semibold text-sm tracking-widest uppercase">Parceiro Credenciado GEAP</span>
+            <div className="h-px w-12 bg-[#F97316]" />
+          </div>
           <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
           <p className="text-gray-500 mt-3 text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="grid md:grid-cols-3 gap-6 mt-14 max-w-4xl mx-auto">
@@ -459,7 +464,7 @@ const Index = () => {
               { num: "+200", label: "Órgãos Atendidos", desc: "Parcerias com ministérios, autarquias e tribunais" },
               { num: "+50 Mil", label: "Vidas Atendidas", desc: "Milhares de servidores e seus familiares protegidos" },
             ].map((m) => (
-              <div key={m.label} className="scroll-reveal rounded-2xl p-8 text-center" style={{ backgroundColor: "#F0F5FF" }}>
+              <div key={m.label} className="scroll-reveal rounded-2xl p-8 text-center bg-white shadow-md border border-[#1B3461]/10">
                 <p className="text-5xl font-black text-[#F97316]">{m.num}</p>
                 <p className="font-bold text-[#1B3461] mt-2">{m.label}</p>
                 <p className="text-gray-500 text-sm mt-2">{m.desc}</p>
