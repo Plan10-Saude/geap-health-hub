@@ -123,11 +123,21 @@ const Index = () => {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');`}</style>
 
       {/* ===== HEADER ===== */}
-      <header className="sticky top-0 z-50" style={{ background: "linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)" }}>
-        <div className="flex items-center justify-center gap-16 px-8 h-20 max-w-7xl mx-auto">
-          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-14 w-auto object-contain" />
-          {GeapLogoSvg}
-          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
+      <header className="sticky top-0 z-50 w-full overflow-hidden"
+        style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)' }}>
+        <div className="flex items-center justify-center gap-6 sm:gap-12 px-4 py-3 h-20">
+          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-9 sm:h-14 w-auto object-contain flex-shrink-0" />
+          <div className="flex-shrink-0">
+            <svg width="90" height="30" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" className="sm:w-[120px] sm:h-[40px]">
+              <circle cx="20" cy="20" r="13" fill="none" stroke="white" strokeWidth="1.8"/>
+              <ellipse cx="20" cy="20" rx="7" ry="13" fill="none" stroke="white" strokeWidth="1.4"/>
+              <line x1="7" y1="15" x2="33" y2="15" stroke="white" strokeWidth="1.2"/>
+              <line x1="7" y1="20" x2="33" y2="20" stroke="white" strokeWidth="1.2"/>
+              <line x1="7" y1="25" x2="33" y2="25" stroke="white" strokeWidth="1.2"/>
+              <text x="40" y="28" fill="white" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="22" letterSpacing="2">GEAP</text>
+            </svg>
+          </div>
+          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-9 sm:h-12 w-auto object-contain flex-shrink-0" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
         </div>
       </header>
 
