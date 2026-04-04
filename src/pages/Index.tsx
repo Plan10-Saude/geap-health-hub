@@ -146,16 +146,16 @@ const Index = () => {
         <div className="w-72 h-72 max-w-[50vw] rounded-full bg-[#F97316]/10 blur-3xl absolute top-10 left-10 pointer-events-none z-0" />
         <div className="w-64 h-64 max-w-[50vw] rounded-full bg-[#1B5FAA]/30 blur-3xl absolute bottom-10 right-10 pointer-events-none z-0" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
-          <span className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/50 text-[#F97316] rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
+          <span className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/50 text-[#F97316] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6 text-center">
             ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
           </span>
-          <h1 className="font-display font-black text-4xl md:text-6xl leading-tight text-white">
+          <h1 className="font-display font-black text-3xl sm:text-4xl md:text-6xl leading-tight text-white">
             O Plano Oficial de Saúde do <span style={{ color: "#F97316" }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
           </h1>
           <p className="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mt-6">
             Contratação direta sem licitação. Rede com mais de 15 mil prestadores em 2.300 municípios. Subsídio governamental para servidores e dependentes.
           </p>
-          <div className="mt-10 max-w-lg mx-auto text-left grid grid-cols-2 gap-3">
+          <div className="mt-10 max-w-lg mx-auto text-left grid grid-cols-1 sm:grid-cols-2 gap-3">
             {["Dispensa de licitação garantida", "Redução de carências conforme ANS", "Rede com +15 mil prestadores", "Adesão facilitada para dependentes"].map((t) => (
               <div key={t} className="flex items-center gap-2 text-white/90 text-sm">✅ {t}</div>
             ))}
