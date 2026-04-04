@@ -510,7 +510,7 @@ const Index = () => {
           </p>
 
           {/* Depoimento */}
-          <div className="max-w-2xl mx-auto mt-10 bg-[#F0F5FF] border border-[#1B3461]/10 rounded-2xl p-8">
+          <div className="max-w-2xl mx-auto mt-10 bg-white rounded-2xl border-t-4 border-[#F97316] shadow-md border-x border-b border-x-[#1B3461]/10 border-b-[#1B3461]/10 p-8">
             <svg className="w-8 h-8 text-[#F97316]/30 mb-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
             <p className="text-[#1B3461] text-base leading-relaxed italic">
               "A parceria com a Plan10 Saúde foi decisiva para viabilizarmos o plano de saúde dos nossos servidores de forma ágil e sem burocracia. O suporte jurídico e a comunicação interna foram impecáveis — em menos de quatro meses tínhamos o convênio formalizado e os servidores já aderindo."
