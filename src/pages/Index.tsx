@@ -285,6 +285,16 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ===== CTA INTERMEDIÁRIO ===== */}
+      <div className="py-14 px-8 text-center" style={{ background: "linear-gradient(to right, #1B3461, #1B5FAA)" }}>
+        <h2 className="font-display text-3xl font-bold text-white">Seu órgão ainda não tem um plano de saúde de qualidade para os servidores?</h2>
+        <p className="text-white/80 mt-3 text-lg">A apresentação é gratuita. O processo é simples. A diferença é real.</p>
+        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-block mt-8 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-10 py-4 rounded-xl text-lg shadow-xl transition">
+          Quero Uma Apresentação Gratuita →
+        </a>
+        <p className="text-white/50 text-sm mt-4">Sem licitação · Sem burocracia · Sem custo de consultoria</p>
+      </div>
+
       {/* ===== COMO FUNCIONA ===== */}
       <section className="py-24 text-white" style={{ background: "linear-gradient(135deg, #0D1F4A, #1B5FAA)" }}>
         <div className="max-w-6xl mx-auto px-6">
