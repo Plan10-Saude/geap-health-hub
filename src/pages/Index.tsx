@@ -9,17 +9,6 @@ const ChevronSvg = ({ open }: { open: boolean }) => (
   </svg>
 );
 
-const GeapLogoSvg = (
-  <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="20" r="13" fill="none" stroke="white" strokeWidth="1.8" />
-    <ellipse cx="20" cy="20" rx="7" ry="13" fill="none" stroke="white" strokeWidth="1.4" />
-    <line x1="7" y1="15" x2="33" y2="15" stroke="white" strokeWidth="1.2" />
-    <line x1="7" y1="20" x2="33" y2="20" stroke="white" strokeWidth="1.2" />
-    <line x1="7" y1="25" x2="33" y2="25" stroke="white" strokeWidth="1.2" />
-    <text x="40" y="28" fill="white" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="22" letterSpacing="2">GEAP</text>
-  </svg>
-);
-
 const WA = "https://wa.me/5511938043333";
 
 const CheckIcon = () => (
@@ -46,7 +35,8 @@ const useScrollReveal = () => {
 };
 
 const Index = () => {
-  const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [openTema, setOpenTema] = useState<number | null>(null);
+  const [openPergunta, setOpenPergunta] = useState<string | null>(null);
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [orgao, setOrgao] = useState("");
@@ -153,35 +143,57 @@ const Index = () => {
     { n: "5", title: "Suporte Contínuo", desc: "Acompanhamento pós-implantação e suporte permanente" },
   ];
 
-  const faqItems = [
-    { q: "Quem pode conveniar?", a: "Órgãos públicos federais, estaduais e municipais, além de autarquias, fundações e empresas públicas que desejam oferecer planos de saúde aos seus servidores e dependentes." },
-    { q: "Como funciona o subsídio?", a: "O subsídio é concedido conforme as normas do órgão conveniado e da GEAP. Ele reduz o valor da mensalidade do servidor, sendo calculado de acordo com faixa salarial, tipo de plano e número de dependentes." },
-    { q: "Quais documentos são necessários para o convênio?", a: "Para formalizar o convênio, o órgão deve apresentar: ofício de solicitação de credenciamento, cópia do CNPJ e do ato constitutivo, termo de adesão ou contrato de convênio, e relação de servidores interessados (quando aplicável)." },
-    { q: "A GEAP atende agregados?", a: "Sim. Além dos dependentes diretos (cônjuge, filhos, enteados), a GEAP permite a inclusão de agregados como pais, sogros e netos, mediante comprovação e pagamento adicional." },
-    { q: "Qual é a cobertura dos planos GEAP?", a: "Os planos oferecem cobertura nacional, com rede credenciada em todas as capitais e principais cidades do país, incluindo consultas, exames, internações, cirurgias, odontologia e programas de prevenção." },
-    { q: "Quanto tempo leva para o convênio ser efetivado?", a: "Após o envio da documentação e análise técnica, o processo de credenciamento é concluído em média entre três a cinco meses, dependendo da legislação local, complexidade do órgão e do número de servidores." },
-    { q: "Como solicitar uma apresentação institucional?", a: "Basta preencher o formulário disponível nesta página com os dados do órgão e aguardar o contato de um consultor especializado da Plan10 Saúde / GEAP." },
-    { q: "Os dados enviados são protegidos?", a: "Sim. Todos os dados são tratados conforme a Lei Geral de Proteção de Dados (LGPD) e armazenados em ambiente seguro com criptografia SSL 256 bits." },
-    { q: "Há suporte após o convênio?", a: "Sim. O órgão conveniado conta com atendimento exclusivo, suporte técnico e acompanhamento contínuo para garantir a satisfação dos servidores e a eficiência da gestão do plano." },
-    { q: "Onde posso obter mais informações oficiais?", a: "No SAC da GEAP ou diretamente com a Plan10 Saúde, parceira credenciada para órgãos públicos. Entre em contato pelo WhatsApp (11) 9 3804-3333 ou pelo site www.plangroup.com.br." },
-    { q: "Quais servidores podem aderir ao plano?", a: "Servidores ativos, aposentados, pensionistas e seus dependentes, conforme regras de elegibilidade da GEAP." },
-    { q: "Como é calculado o valor da mensalidade?", a: "O valor depende de: faixa etária do beneficiário, tipo de plano escolhido, categoria do servidor, existência de dependentes e subsídio aplicado pelo órgão." },
-    { q: "O órgão precisa ter número mínimo de servidores?", a: "Não. A GEAP atende órgãos de todos os portes, desde pequenas prefeituras até grandes ministérios." },
-    { q: "O convênio exige licitação?", a: "Não. A GEAP é uma autogestão pública, o que permite convênios diretos com órgãos governamentais sem necessidade de processo licitatório." },
-    { q: "Existem planos específicos para determinados perfis?", a: "Sim. A GEAP oferece modalidades com diferentes níveis de cobertura, rede e valores, adequadas a cada realidade institucional." },
-    { q: "A GEAP possui rede própria?", a: "Sim. Além da rede credenciada nacional, a GEAP possui unidades próprias em diversas regiões do Brasil." },
-    { q: "A cobertura é válida fora do estado?", a: "Sim. Todos os planos possuem cobertura nacional, conforme legislação da ANS." },
-    { q: "Existem programas de prevenção e saúde mental?", a: "Sim. A GEAP oferece programas de saúde mental, acompanhamento de doenças crônicas, prevenção e bem-estar e acompanhamento de gestantes." },
-    { q: "Como funciona o pagamento?", a: "O pagamento pode ser via desconto em folha ou via boleto, dependendo da modalidade do órgão conveniado." },
-  ];
-
-  const tags = [
-    "Consultoria Gratuita",
-    "Apoio Jurídico Completo",
-    "Comunicação Interna Estruturada",
-    "Suporte Pós-Implantação",
-    "Parceiro Credenciado GEAP",
-    "LGPD — Dados Protegidos",
+  const faqTemas = [
+    {
+      tema: "Elegibilidade e Adesão",
+      icon: <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>,
+      perguntas: [
+        { q: "Quem pode conveniar?", a: "Órgãos públicos federais, estaduais e municipais, além de autarquias, fundações e empresas públicas que desejam oferecer planos de saúde aos seus servidores e dependentes." },
+        { q: "Quais servidores podem aderir ao plano?", a: "Servidores ativos, aposentados, pensionistas e seus dependentes, conforme regras de elegibilidade da GEAP." },
+        { q: "O órgão precisa ter número mínimo de servidores?", a: "Não. A GEAP atende órgãos de todos os portes, desde pequenas prefeituras até grandes ministérios." },
+        { q: "A GEAP atende agregados?", a: "Sim. Além dos dependentes diretos (cônjuge, filhos, enteados), a GEAP permite a inclusão de agregados como pais, sogros e netos, mediante comprovação e pagamento adicional." },
+      ],
+    },
+    {
+      tema: "Convênio e Licitação",
+      icon: <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z"/><path d="M9 12l2 2 4-4" stroke="#22A851" strokeWidth="2"/></svg>,
+      perguntas: [
+        { q: "O convênio exige licitação?", a: "Não. A GEAP é uma autogestão pública, o que permite convênios diretos com órgãos governamentais sem necessidade de processo licitatório." },
+        { q: "Quais documentos são necessários para o convênio?", a: "Para formalizar o convênio, o órgão deve apresentar: ofício de solicitação de credenciamento, cópia do CNPJ e do ato constitutivo, termo de adesão ou contrato de convênio, e relação de servidores interessados (quando aplicável)." },
+        { q: "Quanto tempo leva para o convênio ser efetivado?", a: "Após o envio da documentação e análise técnica, o processo de credenciamento é concluído em média entre três a cinco meses, dependendo da legislação local, complexidade do órgão e do número de servidores." },
+        { q: "Como solicitar uma apresentação institucional?", a: "Basta preencher o formulário disponível nesta página com os dados do órgão e aguardar o contato de um consultor especializado da Plan10 Saúde / GEAP." },
+      ],
+    },
+    {
+      tema: "Cobertura e Planos",
+      icon: <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"><path d="M3 12h3l2-7 4 14 3-9 2 5 1-3h3" strokeLinejoin="round"/></svg>,
+      perguntas: [
+        { q: "Qual é a cobertura dos planos GEAP?", a: "Os planos oferecem cobertura nacional, com rede credenciada em todas as capitais e principais cidades do país, incluindo consultas, exames, internações, cirurgias, odontologia e programas de prevenção." },
+        { q: "Existem planos específicos para determinados perfis?", a: "Sim. A GEAP oferece modalidades com diferentes níveis de cobertura, rede e valores, adequadas a cada realidade institucional." },
+        { q: "A cobertura é válida fora do estado?", a: "Sim. Todos os planos possuem cobertura nacional, conforme legislação da ANS." },
+        { q: "A GEAP possui rede própria?", a: "Sim. Além da rede credenciada nacional, a GEAP possui unidades próprias em diversas regiões do Brasil." },
+        { q: "Existem programas de prevenção e saúde mental?", a: "Sim. A GEAP oferece programas de saúde mental, acompanhamento de doenças crônicas, prevenção e bem-estar e acompanhamento de gestantes." },
+      ],
+    },
+    {
+      tema: "Financeiro e Pagamento",
+      icon: <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5C9.5 8.4 10.6 7.5 12 7.5s2.5.9 2.5 2-.9 2-2.5 2-2.5.9-2.5 2 1.1 2 2.5 2 2.5-.9 2.5-2"/></svg>,
+      perguntas: [
+        { q: "Como funciona o subsídio?", a: "O subsídio é concedido conforme as normas do órgão conveniado e da GEAP. Ele reduz o valor da mensalidade do servidor, sendo calculado de acordo com faixa salarial, tipo de plano e número de dependentes." },
+        { q: "Como é calculado o valor da mensalidade?", a: "O valor depende de: faixa etária do beneficiário, tipo de plano escolhido, categoria do servidor, existência de dependentes e subsídio aplicado pelo órgão." },
+        { q: "Como funciona o pagamento?", a: "O pagamento pode ser via desconto em folha ou via boleto, dependendo da modalidade do órgão conveniado." },
+        { q: "É possível migrar servidores de outro plano?", a: "Sim. A Plan10 Saúde auxilia no processo de migração e na comunicação interna com os servidores." },
+      ],
+    },
+    {
+      tema: "Segurança e Suporte",
+      icon: <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>,
+      perguntas: [
+        { q: "Os dados enviados são protegidos?", a: "Sim. Todos os dados são tratados conforme a Lei Geral de Proteção de Dados (LGPD) e armazenados em ambiente seguro com criptografia SSL 256 bits." },
+        { q: "Há suporte após o convênio?", a: "Sim. O órgão conveniado conta com atendimento exclusivo, suporte técnico e acompanhamento contínuo para garantir a satisfação dos servidores e a eficiência da gestão do plano." },
+        { q: "Onde posso obter mais informações oficiais?", a: "No SAC da GEAP ou diretamente com a Plan10 Saúde, parceira credenciada para órgãos públicos. Entre em contato pelo WhatsApp (11) 9 3804-3333 ou pelo site www.plangroup.com.br." },
+      ],
+    },
   ];
 
   const coberturas = [
@@ -278,9 +290,32 @@ const Index = () => {
                   Falar com Consultor Especializado
                 </a>
               </div>
-              <p className="text-white/50 text-xs mt-3 flex items-center gap-2">🔒 Apresentação gratuita · Sem compromisso · Resposta em até 24h</p>
+              <p className="text-white/50 text-xs mt-3 flex items-center gap-2">
+                contato@plangroup.com.br&nbsp; |&nbsp; (11) 9 3804-3333
+              </p>
             </div>
             <div className="hidden md:block" />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== BENEFÍCIOS ===== */}
+      <section id="beneficios" className="bg-white py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">
+            Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span>
+          </h2>
+          <p className="text-gray-500 mt-3 text-lg text-center">Diferenciais que só um plano oficial do servidor público pode oferecer.</p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-14">
+            {beneficios.map((b, i) => (
+              <div key={b.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white border border-gray-100 rounded-2xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group`}>
+                <div className="w-12 h-12 rounded-xl bg-[#1B3461]/[0.08] flex items-center justify-center mb-5 group-hover:bg-[#22A851]/15 transition-colors duration-300">
+                  {b.icon}
+                </div>
+                <h3 className="font-display font-bold text-[#1B3461] text-lg mb-2">{b.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -305,31 +340,10 @@ const Index = () => {
         </div>
       </div>
 
-      {/* ===== BENEFÍCIOS ===== */}
-      <section id="beneficios" className="bg-white py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">
-            Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span> para o seu órgão?
-          </h2>
-          <p className="text-gray-500 mt-3 text-lg text-center">Diferenciais que só um plano oficial do servidor público pode oferecer.</p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-14">
-            {beneficios.map((b, i) => (
-              <div key={b.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white border border-gray-100 rounded-2xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group`}>
-                <div className="w-12 h-12 rounded-xl bg-[#1B3461]/[0.08] flex items-center justify-center mb-5 group-hover:bg-[#22A851]/15 transition-colors duration-300">
-                  {b.icon}
-                </div>
-                <h3 className="font-display font-bold text-[#1B3461] text-lg mb-2">{b.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== DIFERENCIAIS ===== */}
       <section className="py-16" style={{ backgroundColor: "#F0F5FF" }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Nossos Diferenciais para seu Órgão Público</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Diferenciais que só a GEAP oferece</h2>
           <p className="text-gray-500 mt-3 text-center">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-14">
             {diferenciais.map((d, i) => (
@@ -348,7 +362,7 @@ const Index = () => {
       {/* ===== COBERTURAS ===== */}
       <section id="coberturas" className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Coberturas e Benefícios para seu Órgão Público</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Coberturas e Benefícios</h2>
           <p className="text-gray-500 mt-3 text-center">Tudo o que seu órgão precisa para cuidar da saúde dos colaboradores.</p>
           <div className="grid md:grid-cols-3 gap-6 mt-14">
             {coberturas.map((c, i) => (
@@ -383,7 +397,7 @@ const Index = () => {
       <section id="orgaos" className="py-20 bg-[#0D1F4A] overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="scroll-reveal font-display text-4xl font-bold text-white text-center">
-            Para Quais Órgãos <span style={{ color: '#F97316' }}>Atendemos</span>
+            Para quais órgãos a <span style={{ color: '#F97316' }}>GEAP é indicada</span>
           </h2>
           <p className="text-white/60 mt-3 text-center">Atendimento em todas as esferas governamentais.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mt-14">
@@ -408,7 +422,7 @@ const Index = () => {
 
       {/* ===== CTA INTERMEDIÁRIO ===== */}
       <div className="py-14 px-8 text-center" style={{ background: "linear-gradient(to right, #1B3461, #1B5FAA)" }}>
-        <h2 className="scroll-reveal font-display text-3xl font-bold text-white">Seu órgão ainda não tem um plano de saúde de qualidade para os servidores?</h2>
+        <h2 className="scroll-reveal font-display text-3xl font-bold text-white">Ainda não tem um plano de saúde de qualidade para os servidores?</h2>
         <p className="text-white/80 mt-3 text-lg">A apresentação é gratuita. O processo é simples. A diferença é real.</p>
         <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow inline-block mt-8 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-10 py-4 rounded-xl text-lg shadow-xl transition">
           Quero Uma Apresentação Gratuita →
@@ -419,7 +433,7 @@ const Index = () => {
       {/* ===== COMO FUNCIONA ===== */}
       <section className="py-24 text-white" style={{ background: "linear-gradient(135deg, #0D1F4A, #1B5FAA)" }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="scroll-reveal font-display text-4xl font-bold text-white text-center">Como Funciona a Contratação para Órgãos</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-white text-center">Como Funciona a Contratação</h2>
           <p className="text-white/70 mt-3 text-center">Processo simples e eficiente para seu órgão aderir ao plano de saúde.</p>
           <div className="relative flex flex-col md:flex-row justify-between items-start max-w-5xl mx-auto mt-16">
             <div className="hidden md:block absolute h-0.5 bg-[#F97316]/40 top-6 left-[10%] right-[10%] z-0" />
@@ -442,7 +456,7 @@ const Index = () => {
       {/* ===== POR QUE PLAN10 ===== */}
       <section className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Por que confiar na Plan10 Saúde para sua Instituição?</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
           <p className="text-gray-500 mt-3 text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="grid md:grid-cols-3 gap-6 mt-14 max-w-4xl mx-auto">
             {[
@@ -494,11 +508,50 @@ const Index = () => {
           <p className="max-w-2xl mx-auto text-center mt-4 text-gray-600 text-base">
             A Plan10 Saúde oferece consultoria gratuita e especializada para órgãos públicos, auxiliando em todas as etapas: análise técnica, apoio jurídico, comunicação interna e suporte contínuo.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            {tags.map((t) => (
-              <span key={t} className="inline-flex items-center gap-2 bg-[#22A851]/10 text-[#22A851] font-medium px-4 py-2 rounded-full text-sm">✅ {t}</span>
+
+          {/* Depoimento */}
+          <div className="max-w-2xl mx-auto mt-10 bg-[#F0F5FF] border border-[#1B3461]/10 rounded-2xl p-8">
+            <svg className="w-8 h-8 text-[#F97316]/30 mb-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p className="text-[#1B3461] text-base leading-relaxed italic">
+              "A parceria com a Plan10 Saúde foi decisiva para viabilizarmos o plano de saúde dos nossos servidores de forma ágil e sem burocracia. O suporte jurídico e a comunicação interna foram impecáveis — em menos de quatro meses tínhamos o convênio formalizado e os servidores já aderindo."
+            </p>
+            <div className="flex items-center gap-4 mt-6">
+              <div className="w-12 h-12 rounded-full bg-[#1B3461] flex items-center justify-center text-white font-bold text-sm">
+                MF
+              </div>
+              <div>
+                <p className="font-bold text-[#1B3461] text-sm">Marcos Ferreira</p>
+                <p className="text-gray-500 text-xs">Diretor de RH · Autarquia Municipal de Santos/SP</p>
+              </div>
+              <div className="ml-auto flex items-center gap-0.5">
+                {"★★★★★".split("").map((s, i) => (
+                  <span key={i} className="text-[#F97316] text-sm">{s}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Validações redesenhadas */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-10 max-w-3xl mx-auto">
+            {[
+              "Consultoria Gratuita",
+              "Apoio Jurídico Completo",
+              "Comunicação Interna Estruturada",
+              "Suporte Pós-Implantação",
+              "Parceiro Credenciado GEAP",
+              "LGPD — Dados Protegidos"
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3 bg-[#F0F5FF] rounded-xl px-4 py-3 border border-[#1B3461]/5">
+                <div className="w-5 h-5 rounded-full bg-[#22A851] flex items-center justify-center flex-shrink-0">
+                  <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                    <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <span className="text-[#1B3461] text-sm font-medium">{item}</span>
+              </div>
             ))}
           </div>
+
           <div className="text-center mt-10">
             <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow inline-block bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-10 py-4 rounded-xl text-base shadow-lg transition">
               Proteger a saúde dos servidores do meu órgão
@@ -513,7 +566,7 @@ const Index = () => {
           <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Solicite uma Apresentação Institucional para seu Órgão</h2>
           <p className="text-gray-500 mt-3 text-center">Preencha o formulário e um consultor especializado entrará em contato em até 24h.</p>
           <div className="bg-[#F97316] rounded-2xl p-4 text-center text-white font-semibold text-sm mb-6 max-w-2xl mx-auto mt-12">
-            ⚡ Vagas limitadas para apresentações este mês — garanta a sua agora
+            Vagas limitadas para apresentações este mês — garanta a sua agora
           </div>
           <div className="scroll-reveal max-w-2xl mx-auto bg-white shadow-2xl rounded-3xl p-10">
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -561,11 +614,11 @@ const Index = () => {
               <div className="mt-4 flex items-start gap-3">
                 <input type="checkbox" checked={lgpd} onChange={(e) => setLgpd(e.target.checked)} className="mt-0.5 accent-[#1B5FAA] w-4 h-4" />
                 <label className="text-sm text-gray-600">
-                  Concordo com a Política de Privacidade e autorizo o tratamento dos meus dados conforme a Lei Geral de Proteção de Dados (LGPD).
+                  Concordo com a <a href="/privacidade" className="text-[#1B5FAA] underline">Política de Privacidade</a> e autorizo o tratamento dos meus dados conforme a Lei Geral de Proteção de Dados (LGPD).
                 </label>
               </div>
               <button type="submit" className="hover-glow w-full mt-6 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-3 transition shadow-lg">
-                ✉️ Quero Minha Apresentação Gratuita
+                Quero Minha Apresentação Gratuita
               </button>
             </form>
           </div>
@@ -577,16 +630,53 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Dúvidas Frequentes</h2>
           <p className="text-gray-500 mt-3 text-center">Encontre respostas para perguntas comuns sobre o convênio.</p>
-          <div className="max-w-3xl mx-auto mt-14">
-            {faqItems.map((item, i) => (
-              <div key={i} className="border-b border-gray-200 py-5 cursor-pointer" onClick={() => setFaqOpen(faqOpen === i ? null : i)}>
-                <div className="flex justify-between items-center">
-                  <p className="font-semibold text-[#1B3461] text-sm md:text-base flex items-center gap-3">{item.q}</p>
-                  <ChevronSvg open={faqOpen === i} />
+          <div className="max-w-3xl mx-auto mt-14 space-y-3">
+            {faqTemas.map((tema, tIdx) => (
+              <div key={tIdx}>
+                <div
+                  onClick={() => { setOpenTema(openTema === tIdx ? null : tIdx); setOpenPergunta(null); }}
+                  className={`py-4 px-6 rounded-xl cursor-pointer flex justify-between items-center font-bold text-[#1B3461] border transition-all ${openTema === tIdx ? 'border-[#1B3461]/40 bg-[#E8EEF9]' : 'bg-[#F0F5FF] border-[#1B3461]/10 hover:border-[#1B3461]/30'}`}
+                >
+                  <div className="flex items-center gap-3">
+                    {tema.icon}
+                    <span>{tema.tema}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs bg-[#1B3461]/10 text-[#1B3461] font-semibold px-2 py-0.5 rounded-full">{tema.perguntas.length}</span>
+                    <svg
+                      className={`w-5 h-5 text-[#F97316] transition-transform duration-300 ${openTema === tIdx ? "rotate-180" : ""}`}
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </div>
-                <div className={`overflow-hidden transition-all duration-300 ${faqOpen === i ? "max-h-96 mt-3" : "max-h-0"}`}>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
-                </div>
+                {openTema === tIdx && (
+                  <div className="mt-2 space-y-2">
+                    {tema.perguntas.map((p, pIdx) => {
+                      const key = `${tIdx}-${pIdx}`;
+                      return (
+                        <div key={pIdx}>
+                          <div
+                            onClick={() => setOpenPergunta(openPergunta === key ? null : key)}
+                            className={`py-3 px-5 bg-white rounded-lg cursor-pointer flex justify-between items-center text-sm text-[#1B3461] font-medium border transition-all ${openPergunta === key ? 'border-[#22A851]/40' : 'border-gray-100 hover:border-[#1B3461]/20'}`}
+                          >
+                            <span>{p.q}</span>
+                            <svg
+                              className={`w-4 h-4 text-[#F97316] transition-transform duration-300 flex-shrink-0 ${openPergunta === key ? "rotate-180" : ""}`}
+                              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                          {openPergunta === key && (
+                            <div className="text-gray-600 text-sm px-5 pb-3 pt-1 leading-relaxed">{p.a}</div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -596,27 +686,25 @@ const Index = () => {
       {/* ===== RODAPÉ ===== */}
       <footer className="py-16 px-8 pb-20 md:pb-16" style={{ backgroundColor: "#0D1F4A" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="flex justify-center items-center gap-8 flex-wrap pb-10 border-b border-white/20">
+          <div className="flex justify-center items-center gap-16 flex-wrap pb-10 border-b border-white/20">
             <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
-            <div className="scale-90">{GeapLogoSvg}</div>
             <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
           </div>
           <div className="text-center text-white/70 text-sm mt-8 space-y-2">
             <p>Plan Saúde By Plan Group Ltda | GEAP Autogestão em Saúde</p>
             <p className="flex flex-wrap justify-center items-center gap-1">
-              📞{" "}
               <a href={WA} className="hover:text-white underline" target="_blank" rel="noopener noreferrer">11 9 3804-3333</a>
               {" | "}
               <a href="https://www.plangroup.com.br" className="hover:text-white underline" target="_blank" rel="noopener noreferrer">www.plangroup.com.br</a>
               {" | "}
               <a href="mailto:contato@plangroup.com.br" className="hover:text-white underline">contato@plangroup.com.br</a>
             </p>
-            <p>📍 Paulista Trianon | Av. Paulista, 1079 | 7º andar | Bela Vista | CEP 01311-200 | São Paulo | SP</p>
+            <p>Paulista Trianon | Av. Paulista, 1079 | 7º andar | Bela Vista | CEP 01311-200 | São Paulo | SP</p>
           </div>
           <div className="border-t border-white/10 pt-6 mt-8 flex flex-col md:flex-row justify-between items-center gap-3 text-white/50 text-xs">
             <p>© 2026 Plan10 Saúde · Todos os direitos reservados</p>
             <p>
-              <a href="/privacidade" className="hover:text-white underline">Política de Privacidade</a> · Desenvolvido por Next Corporation
+              <a href="/privacidade" className="hover:text-white underline">Política de Privacidade</a> · Desenvolvido por <a href="https://nextcorporation.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-white underline">Next Corporation</a>
             </p>
           </div>
         </div>
@@ -626,7 +714,7 @@ const Index = () => {
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-white/20" style={{ backgroundColor: "#0D1F4A" }}>
         <div className="py-3 px-4">
           <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow block w-full bg-[#F97316] text-white font-bold py-3.5 rounded-xl text-base shadow-2xl text-center">
-            📱 Falar com Consultor — WhatsApp
+            Falar com Consultor — WhatsApp
           </a>
         </div>
       </div>
