@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 const GeapLogoSvg = (
-  <svg width="130" height="44" viewBox="0 0 130 44" xmlns="http://www.w3.org/2000/svg">
-    <rect width="130" height="44" rx="5" fill="#1B5FAA" />
-    <circle cx="22" cy="22" r="12" fill="none" stroke="white" strokeWidth="1.5" />
-    <ellipse cx="22" cy="22" rx="6" ry="12" fill="none" stroke="white" strokeWidth="1.2" />
-    <line x1="10" y1="17" x2="34" y2="17" stroke="white" strokeWidth="1" />
-    <line x1="10" y1="22" x2="34" y2="22" stroke="white" strokeWidth="1" />
-    <line x1="10" y1="27" x2="34" y2="27" stroke="white" strokeWidth="1" />
-    <text x="42" y="30" fill="white" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="22" letterSpacing="1.5">GEAP</text>
+  <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="13" fill="none" stroke="white" strokeWidth="1.8" />
+    <ellipse cx="20" cy="20" rx="7" ry="13" fill="none" stroke="white" strokeWidth="1.4" />
+    <line x1="7" y1="15" x2="33" y2="15" stroke="white" strokeWidth="1.2" />
+    <line x1="7" y1="20" x2="33" y2="20" stroke="white" strokeWidth="1.2" />
+    <line x1="7" y1="25" x2="33" y2="25" stroke="white" strokeWidth="1.2" />
+    <text x="40" y="28" fill="white" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="22" letterSpacing="2">GEAP</text>
   </svg>
 );
 
@@ -24,7 +23,7 @@ const ChevronSvg = ({ open }: { open: boolean }) => (
 const WA = "https://wa.me/5511938043333";
 
 const Index = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   // Form state
@@ -46,12 +45,7 @@ const Index = () => {
     );
   };
 
-  const navLinks = [
-    { href: "#beneficios", label: "Benefícios" },
-    { href: "#coberturas", label: "Coberturas" },
-    { href: "#orgaos", label: "Quem Pode" },
-    { href: "#formulario", label: "Contato" },
-  ];
+
 
   const beneficios = [
     { emoji: "🏛️", title: "Dispensa de Licitação", desc: "A natureza jurídica da GEAP permite contratação direta, simplificando o processo de adesão sem necessidade de licitação pública." },
@@ -129,35 +123,17 @@ const Index = () => {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');`}</style>
 
       {/* ===== HEADER ===== */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="flex items-center justify-between px-6 md:px-12 h-20 max-w-7xl mx-auto">
-          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-12 w-auto object-contain" />
+      <header className="sticky top-0 z-50" style={{ background: "linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)" }}>
+        <div className="flex items-center justify-between px-8 h-20 max-w-7xl mx-auto">
+          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-14 w-auto object-contain" />
           <div className="hidden md:block">{GeapLogoSvg}</div>
-          <div className="flex items-center gap-4">
-            <nav className="hidden md:flex gap-6 text-sm font-medium text-[#1B3461]">
-              {navLinks.map((l) => (
-                <a key={l.href} href={l.href} className="hover:text-[#F97316] transition">{l.label}</a>
-              ))}
-            </nav>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-[#ea6c0a] transition">
+          <div className="flex items-center gap-6">
+            <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="hidden md:block h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] text-white font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-[#ea6c0a] transition">
               Falar com Consultor
             </a>
-            <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-              <svg className="w-6 h-6 text-[#1B3461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                {mobileOpen
-                  ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />}
-              </svg>
-            </button>
           </div>
         </div>
-        {mobileOpen && (
-          <nav className="md:hidden bg-white border-t border-gray-100 px-6 pb-4 flex flex-col gap-3">
-            {navLinks.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="text-sm font-medium text-[#1B3461] py-2">{l.label}</a>
-            ))}
-          </nav>
-        )}
       </header>
 
       {/* ===== HERO ===== */}
@@ -199,8 +175,29 @@ const Index = () => {
               Solicitar Apresentação ↓
             </a>
           </div>
+          <p className="text-white/60 text-xs mt-4 text-center">🔒 Apresentações institucionais gratuitas · Sem compromisso · Resposta em até 24h</p>
         </div>
       </section>
+
+      {/* ===== BARRA DE PROVA SOCIAL ===== */}
+      <div className="bg-[#F97316] py-5 px-8">
+        <div className="flex justify-center items-center gap-6 md:gap-12 flex-wrap">
+          <div className="flex items-center gap-3 text-white">
+            <span className="font-black text-2xl">+15 Anos</span>
+            <span className="text-sm font-medium opacity-90">de experiência no setor público</span>
+          </div>
+          <div className="hidden md:block h-8 w-px bg-white/30" />
+          <div className="flex items-center gap-3 text-white">
+            <span className="font-black text-2xl">+200 Órgãos</span>
+            <span className="text-sm font-medium opacity-90">conveniados em todo o Brasil</span>
+          </div>
+          <div className="hidden md:block h-8 w-px bg-white/30" />
+          <div className="flex items-center gap-3 text-white">
+            <span className="font-black text-2xl">+50 Mil Vidas</span>
+            <span className="text-sm font-medium opacity-90">de servidores protegidos</span>
+          </div>
+        </div>
+      </div>
 
       {/* ===== BENEFÍCIOS ===== */}
       <section id="beneficios" className="bg-white py-24">
@@ -288,6 +285,16 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ===== CTA INTERMEDIÁRIO ===== */}
+      <div className="py-14 px-8 text-center" style={{ background: "linear-gradient(to right, #1B3461, #1B5FAA)" }}>
+        <h2 className="font-display text-3xl font-bold text-white">Seu órgão ainda não tem um plano de saúde de qualidade para os servidores?</h2>
+        <p className="text-white/80 mt-3 text-lg">A apresentação é gratuita. O processo é simples. A diferença é real.</p>
+        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-block mt-8 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-10 py-4 rounded-xl text-lg shadow-xl transition">
+          Quero Uma Apresentação Gratuita →
+        </a>
+        <p className="text-white/50 text-sm mt-4">Sem licitação · Sem burocracia · Sem custo de consultoria</p>
+      </div>
+
       {/* ===== COMO FUNCIONA ===== */}
       <section className="py-24 text-white" style={{ background: "linear-gradient(135deg, #0D1F4A, #1B5FAA)" }}>
         <div className="max-w-6xl mx-auto px-6">
@@ -350,7 +357,10 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Solicite uma Apresentação Institucional para seu Órgão</h2>
           <p className="text-gray-500 mt-3 text-center">Preencha o formulário e um consultor especializado entrará em contato em até 24h.</p>
-          <div className="max-w-2xl mx-auto bg-white shadow-2xl rounded-3xl p-10 mt-12">
+          <div className="bg-[#F97316] rounded-2xl p-4 text-center text-white font-semibold text-sm mb-6 max-w-2xl mx-auto mt-12">
+            ⚡ Vagas limitadas para apresentações este mês — garanta a sua agora
+          </div>
+          <div className="max-w-2xl mx-auto bg-white shadow-2xl rounded-3xl p-10">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="font-medium text-[#1B3461] text-sm mb-1 block">Nome</label>
@@ -399,8 +409,8 @@ const Index = () => {
                   Concordo com a Política de Privacidade e autorizo o tratamento dos meus dados conforme a Lei Geral de Proteção de Dados (LGPD).
                 </label>
               </div>
-              <button type="submit" className="w-full mt-6 bg-[#1B3461] hover:bg-[#0D1F4A] text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-3 transition shadow-lg">
-                ✉️ Solicitar Contato
+              <button type="submit" className="w-full mt-6 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-3 transition shadow-lg">
+                ✉️ Quero Minha Apresentação Gratuita
               </button>
             </form>
           </div>
@@ -429,7 +439,7 @@ const Index = () => {
       </section>
 
       {/* ===== RODAPÉ ===== */}
-      <footer className="py-16 px-8" style={{ backgroundColor: "#0D1F4A" }}>
+      <footer className="py-16 px-8 pb-20 md:pb-16" style={{ backgroundColor: "#0D1F4A" }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center items-center gap-8 flex-wrap pb-10 border-b border-white/20">
             <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
@@ -456,6 +466,15 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* ===== CTA FLUTUANTE MOBILE ===== */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-white/20" style={{ backgroundColor: "#0D1F4A" }}>
+        <div className="py-3 px-4">
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="block w-full bg-[#F97316] text-white font-bold py-3.5 rounded-xl text-base shadow-2xl text-center">
+            📱 Falar com Consultor — WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
