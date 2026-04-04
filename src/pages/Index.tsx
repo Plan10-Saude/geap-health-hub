@@ -357,7 +357,10 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Solicite uma Apresentação Institucional para seu Órgão</h2>
           <p className="text-gray-500 mt-3 text-center">Preencha o formulário e um consultor especializado entrará em contato em até 24h.</p>
-          <div className="max-w-2xl mx-auto bg-white shadow-2xl rounded-3xl p-10 mt-12">
+          <div className="bg-[#F97316] rounded-2xl p-4 text-center text-white font-semibold text-sm mb-6 max-w-2xl mx-auto mt-12">
+            ⚡ Vagas limitadas para apresentações este mês — garanta a sua agora
+          </div>
+          <div className="max-w-2xl mx-auto bg-white shadow-2xl rounded-3xl p-10">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="font-medium text-[#1B3461] text-sm mb-1 block">Nome</label>
