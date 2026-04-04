@@ -123,11 +123,21 @@ const Index = () => {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');`}</style>
 
       {/* ===== HEADER ===== */}
-      <header className="sticky top-0 z-50" style={{ background: "linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)" }}>
-        <div className="flex items-center justify-center gap-16 px-8 h-20 max-w-7xl mx-auto">
-          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-14 w-auto object-contain" />
-          {GeapLogoSvg}
-          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
+      <header className="sticky top-0 z-50 w-full overflow-hidden"
+        style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)' }}>
+        <div className="flex items-center justify-center gap-6 sm:gap-12 px-4 py-3 h-20">
+          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-9 sm:h-14 w-auto object-contain flex-shrink-0" />
+          <div className="flex-shrink-0">
+            <svg width="90" height="30" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" className="sm:w-[120px] sm:h-[40px]">
+              <circle cx="20" cy="20" r="13" fill="none" stroke="white" strokeWidth="1.8"/>
+              <ellipse cx="20" cy="20" rx="7" ry="13" fill="none" stroke="white" strokeWidth="1.4"/>
+              <line x1="7" y1="15" x2="33" y2="15" stroke="white" strokeWidth="1.2"/>
+              <line x1="7" y1="20" x2="33" y2="20" stroke="white" strokeWidth="1.2"/>
+              <line x1="7" y1="25" x2="33" y2="25" stroke="white" strokeWidth="1.2"/>
+              <text x="40" y="28" fill="white" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="22" letterSpacing="2">GEAP</text>
+            </svg>
+          </div>
+          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-9 sm:h-12 w-auto object-contain flex-shrink-0" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
         </div>
       </header>
 
@@ -135,17 +145,17 @@ const Index = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ background: "radial-gradient(ellipse at 30% 20%, #2563EB44 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, #1B5FAA55 0%, transparent 50%), linear-gradient(135deg, #050D1F 0%, #0D1F4A 40%, #1B3461 70%, #1B5FAA 100%)" }}>
         <div className="w-72 h-72 max-w-[50vw] rounded-full bg-[#F97316]/10 blur-3xl absolute top-10 left-10 pointer-events-none z-0" />
         <div className="w-64 h-64 max-w-[50vw] rounded-full bg-[#1B5FAA]/30 blur-3xl absolute bottom-10 right-10 pointer-events-none z-0" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
-          <span className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/50 text-[#F97316] rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 py-24 text-center">
+          <span className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/50 text-[#F97316] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6 text-center">
             ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
           </span>
-          <h1 className="font-display font-black text-4xl md:text-6xl leading-tight text-white">
+          <h1 className="font-display font-black text-3xl sm:text-4xl md:text-6xl leading-tight text-white">
             O Plano Oficial de Saúde do <span style={{ color: "#F97316" }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
           </h1>
           <p className="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mt-6">
             Contratação direta sem licitação. Rede com mais de 15 mil prestadores em 2.300 municípios. Subsídio governamental para servidores e dependentes.
           </p>
-          <div className="mt-10 max-w-lg mx-auto text-left grid grid-cols-2 gap-3">
+          <div className="mt-10 max-w-lg mx-auto text-left grid grid-cols-1 sm:grid-cols-2 gap-3">
             {["Dispensa de licitação garantida", "Redução de carências conforme ANS", "Rede com +15 mil prestadores", "Adesão facilitada para dependentes"].map((t) => (
               <div key={t} className="flex items-center gap-2 text-white/90 text-sm">✅ {t}</div>
             ))}
@@ -166,21 +176,21 @@ const Index = () => {
       </section>
 
       {/* ===== BARRA DE PROVA SOCIAL ===== */}
-      <div className="bg-[#F97316] py-5 px-8">
-        <div className="flex justify-center items-center gap-6 md:gap-12 flex-wrap">
-          <div className="flex items-center gap-3 text-white">
-            <span className="font-black text-2xl">+15 Anos</span>
-            <span className="text-sm font-medium opacity-90">de experiência no setor público</span>
+      <div className="bg-[#F97316] py-6 px-6 w-full overflow-hidden">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+          <div className="text-center text-white">
+            <span className="font-black text-3xl block">+15 Anos</span>
+            <span className="text-sm opacity-90">de experiência no setor público</span>
           </div>
-          <div className="hidden md:block h-8 w-px bg-white/30" />
-          <div className="flex items-center gap-3 text-white">
-            <span className="font-black text-2xl">+200 Órgãos</span>
-            <span className="text-sm font-medium opacity-90">conveniados em todo o Brasil</span>
+          <div className="hidden sm:block h-8 w-px bg-white/30" />
+          <div className="text-center text-white">
+            <span className="font-black text-3xl block">+200 Órgãos</span>
+            <span className="text-sm opacity-90">conveniados em todo o Brasil</span>
           </div>
-          <div className="hidden md:block h-8 w-px bg-white/30" />
-          <div className="flex items-center gap-3 text-white">
-            <span className="font-black text-2xl">+50 Mil Vidas</span>
-            <span className="text-sm font-medium opacity-90">de servidores protegidos</span>
+          <div className="hidden sm:block h-8 w-px bg-white/30" />
+          <div className="text-center text-white">
+            <span className="font-black text-3xl block">+50 Mil Vidas</span>
+            <span className="text-sm opacity-90">de servidores protegidos</span>
           </div>
         </div>
       </div>
