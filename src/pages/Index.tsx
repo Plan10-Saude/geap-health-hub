@@ -45,12 +45,7 @@ const Index = () => {
     );
   };
 
-  const navLinks = [
-    { href: "#beneficios", label: "Benefícios" },
-    { href: "#coberturas", label: "Coberturas" },
-    { href: "#orgaos", label: "Quem Pode" },
-    { href: "#formulario", label: "Contato" },
-  ];
+
 
   const beneficios = [
     { emoji: "🏛️", title: "Dispensa de Licitação", desc: "A natureza jurídica da GEAP permite contratação direta, simplificando o processo de adesão sem necessidade de licitação pública." },
