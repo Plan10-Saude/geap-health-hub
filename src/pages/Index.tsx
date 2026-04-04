@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ChevronSvg = ({ open }: { open: boolean }) => (
   <svg
@@ -28,6 +28,23 @@ const CheckIcon = () => (
   </div>
 );
 
+const useScrollReveal = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+};
+
 const Index = () => {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [nome, setNome] = useState("");
@@ -39,6 +56,8 @@ const Index = () => {
   const [servidores, setServidores] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [lgpd, setLgpd] = useState(false);
+
+  useScrollReveal();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -114,16 +133,16 @@ const Index = () => {
     },
   ];
 
-  const orgaos = [
-    { emoji: "🏙️", name: "Prefeituras" },
-    { emoji: "🏛️", name: "Câmaras Municipais" },
-    { emoji: "🏢", name: "Autarquias" },
-    { emoji: "📋", name: "Secretarias e Órgãos Estaduais" },
-    { emoji: "⚖️", name: "Tribunais" },
-    { emoji: "🏭", name: "Empresas Públicas" },
-    { emoji: "🎓", name: "Universidades Federais" },
-    { emoji: "🛡️", name: "Forças Armadas" },
-    { emoji: "🏫", name: "Hospitais Universitários" },
+  const orgaosData = [
+    { title: "Prefeituras", sub: "Municípios de todos os portes", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M9 21V12h6v9" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg> },
+    { title: "Câmaras Municipais", sub: "Poder legislativo municipal", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><path d="M12 3L2 9h20L12 3zM4 9v11h16V9M2 20h20M9 14h6M9 17h6" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg> },
+    { title: "Autarquias", sub: "Entidades da administração indireta", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="white" strokeWidth="1.6"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18" stroke="white" strokeWidth="1.2" strokeLinecap="round"/></svg> },
+    { title: "Secretarias Estaduais", sub: "Órgãos da esfera estadual", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 12h6M9 16h4" stroke="white" strokeWidth="1.6" strokeLinecap="round"/></svg> },
+    { title: "Tribunais", sub: "Poder judiciário em todas as instâncias", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><path d="M12 3v18M3 21h18M5 8l7-5 7 5" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 8v4a4 4 0 008 0V8M11 8v4a4 4 0 008 0V8" stroke="white" strokeWidth="1.4" strokeLinecap="round"/></svg> },
+    { title: "Empresas Públicas", sub: "Sociedades de economia mista", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="white" strokeWidth="1.6"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 12v4M10 14h4" stroke="white" strokeWidth="1.6" strokeLinecap="round"/></svg> },
+    { title: "Universidades Federais", sub: "Institutos e fundações de ensino", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" stroke="white" strokeWidth="1.6" strokeLinecap="round"/></svg> },
+    { title: "Forças Armadas", sub: "Militares ativos e na reserva", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 12l2 2 4-4" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/></svg> },
+    { title: "Hospitais Universitários", sub: "Unidades hospitalares públicas", icon: <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" strokeWidth="1.6"/><path d="M12 8v8M8 12h8" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/></svg> },
   ];
 
   const steps = [
@@ -190,31 +209,57 @@ const Index = () => {
 
   return (
     <div className="font-body overflow-x-hidden w-full">
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');`}</style>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');
+        .scroll-reveal {
+          opacity: 0;
+          transform: translateY(32px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .scroll-reveal.revealed {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .scroll-reveal-delay-1 { transition-delay: 0.1s; }
+        .scroll-reveal-delay-2 { transition-delay: 0.2s; }
+        .scroll-reveal-delay-3 { transition-delay: 0.3s; }
+        .scroll-reveal-delay-4 { transition-delay: 0.4s; }
+        .scroll-reveal-delay-5 { transition-delay: 0.5s; }
+        .hover-lift {
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .hover-lift:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 20px 40px rgba(27, 52, 97, 0.15);
+        }
+        .hover-glow:hover {
+          box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+        }
+      `}</style>
 
-      {/* ===== HEADER (ALT 1 — 2 logos) ===== */}
+      {/* ===== HEADER (2 logos centralizados) ===== */}
       <header className="sticky top-0 z-50 w-full overflow-hidden"
         style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 60%, #1B5FAA 100%)' }}>
-        <div className="flex items-center justify-between px-6 sm:px-12 h-16 sm:h-20 max-w-7xl mx-auto w-full">
+        <div className="flex items-center justify-center gap-16 sm:gap-24 px-6 h-16 sm:h-20 w-full">
           <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-8 sm:h-12 w-auto object-contain flex-shrink-0" />
           <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-8 sm:h-11 w-auto object-contain flex-shrink-0" style={{ filter: 'brightness(0) invert(1)', opacity: 0.95 }} />
         </div>
       </header>
 
-      {/* ===== HERO (ALT 2 — split com imagem) ===== */}
+      {/* ===== HERO ===== */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <img src="/familia-hero.jpg" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(9,25,60,0.92) 0%, rgba(13,31,74,0.88) 40%, rgba(13,31,74,0.4) 70%, transparent 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 py-24 sm:py-32 w-full">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
-              <div className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/40 text-[#F97316] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6">
+              <div className="scroll-reveal inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/40 text-[#F97316] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6">
                 ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
               </div>
-              <h1 className="font-display font-black text-3xl sm:text-5xl text-white leading-tight mb-4">
+              <h1 className="scroll-reveal scroll-reveal-delay-1 font-display font-black text-3xl sm:text-5xl text-white leading-tight mb-4">
                 O Plano de Saúde Oficial do <span style={{ color: '#F97316' }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
               </h1>
-              <p className="font-body text-base sm:text-lg text-white/75 mb-8 max-w-lg">
+              <p className="scroll-reveal scroll-reveal-delay-2 font-body text-base sm:text-lg text-white/75 mb-8 max-w-lg">
                 Contratação direta sem licitação · Rede nacional · Subsídio governamental
               </p>
               <div className="flex flex-col gap-3 mb-10">
@@ -226,7 +271,7 @@ const Index = () => {
                 ))}
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105 text-center">
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105 text-center">
                   Quero Informações para Meu Órgão
                 </a>
                 <a href={WA} target="_blank" rel="noopener noreferrer" className="border-2 border-white/60 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all text-center">
@@ -240,7 +285,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== BARRA DE PROVA SOCIAL (ALT 3) ===== */}
+      {/* ===== BARRA DE PROVA SOCIAL ===== */}
       <div className="bg-[#F97316] py-6 px-6 w-full overflow-hidden">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
           <div className="text-center text-white">
@@ -260,16 +305,16 @@ const Index = () => {
         </div>
       </div>
 
-      {/* ===== BENEFÍCIOS (ALT 4 — SVG icons + hover) ===== */}
+      {/* ===== BENEFÍCIOS ===== */}
       <section id="beneficios" className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">
             Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span> para o seu órgão?
           </h2>
           <p className="text-gray-500 mt-3 text-lg text-center">Diferenciais que só um plano oficial do servidor público pode oferecer.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-14">
-            {beneficios.map((b) => (
-              <div key={b.title} className="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group">
+            {beneficios.map((b, i) => (
+              <div key={b.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white border border-gray-100 rounded-2xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group`}>
                 <div className="w-12 h-12 rounded-xl bg-[#1B3461]/[0.08] flex items-center justify-center mb-5 group-hover:bg-[#22A851]/15 transition-colors duration-300">
                   {b.icon}
                 </div>
@@ -281,14 +326,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== DIFERENCIAIS (ALT 5 — compacto + SVG icons) ===== */}
+      {/* ===== DIFERENCIAIS ===== */}
       <section className="py-16" style={{ backgroundColor: "#F0F5FF" }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Nossos Diferenciais para seu Órgão Público</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Nossos Diferenciais para seu Órgão Público</h2>
           <p className="text-gray-500 mt-3 text-center">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-14">
-            {diferenciais.map((d) => (
-              <div key={d.title} className="text-center p-6">
+            {diferenciais.map((d, i) => (
+              <div key={d.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} text-center p-6`}>
                 <div className="bg-white shadow-md rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-5">
                   {d.icon}
                 </div>
@@ -300,14 +345,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== COBERTURAS (ALT 6 — imagens reais) ===== */}
+      {/* ===== COBERTURAS ===== */}
       <section id="coberturas" className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Coberturas e Benefícios para seu Órgão Público</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Coberturas e Benefícios para seu Órgão Público</h2>
           <p className="text-gray-500 mt-3 text-center">Tudo o que seu órgão precisa para cuidar da saúde dos colaboradores.</p>
           <div className="grid md:grid-cols-3 gap-6 mt-14">
-            {coberturas.map((c) => (
-              <div key={c.title} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+            {coberturas.map((c, i) => (
+              <div key={c.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100`}>
                 <div className="relative h-48 overflow-hidden">
                   <img src={c.img} alt={c.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(27,52,97,0.6) 100%)' }} />
@@ -334,31 +379,38 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== ÓRGÃOS ===== */}
-      <section id="orgaos" className="py-24" style={{ backgroundColor: "#F0F5FF" }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Para Quais Órgãos Atendemos</h2>
-          <p className="text-gray-500 mt-3 text-center">Atendimento em todas as esferas governamentais.</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 mt-14">
-            {orgaos.map((o) => (
-              <div key={o.name} className="bg-white shadow-sm rounded-2xl p-6 text-center border border-transparent hover:border-[#1B5FAA] hover:shadow-md transition-all duration-200">
-                <span className="text-4xl">{o.emoji}</span>
-                <p className="font-semibold text-[#1B3461] text-sm mt-3">{o.name}</p>
+      {/* ===== ÓRGÃOS (ALT 5 — redesign navy) ===== */}
+      <section id="orgaos" className="py-20 bg-[#0D1F4A] overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-white text-center">
+            Para Quais Órgãos <span style={{ color: '#F97316' }}>Atendemos</span>
+          </h2>
+          <p className="text-white/60 mt-3 text-center">Atendimento em todas as esferas governamentais.</p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mt-14">
+            {orgaosData.map((o, i) => (
+              <div key={o.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex items-center gap-5 cursor-default hover:bg-white/10 hover:border-[#F97316]/40 transition-all duration-300`}>
+                <div className="w-14 h-14 rounded-xl bg-[#F97316]/15 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F97316]/25 transition-colors duration-300">
+                  {o.icon}
+                </div>
+                <div>
+                  <p className="font-bold text-white text-base">{o.title}</p>
+                  <p className="text-white/50 text-xs mt-0.5">{o.sub}</p>
+                </div>
               </div>
             ))}
           </div>
-          <p className="text-center mt-10 text-sm text-gray-500">
-            Meu órgão não está na lista?{" "}
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="underline text-[#F97316] font-medium">Fale com a gente →</a>
+          <p className="text-center mt-10 text-sm text-white/50">
+            Seu órgão não está listado?{" "}
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="text-[#F97316] underline font-medium hover:text-[#ea6c0a] transition-colors">Fale com a gente →</a>
           </p>
         </div>
       </section>
 
       {/* ===== CTA INTERMEDIÁRIO ===== */}
       <div className="py-14 px-8 text-center" style={{ background: "linear-gradient(to right, #1B3461, #1B5FAA)" }}>
-        <h2 className="font-display text-3xl font-bold text-white">Seu órgão ainda não tem um plano de saúde de qualidade para os servidores?</h2>
+        <h2 className="scroll-reveal font-display text-3xl font-bold text-white">Seu órgão ainda não tem um plano de saúde de qualidade para os servidores?</h2>
         <p className="text-white/80 mt-3 text-lg">A apresentação é gratuita. O processo é simples. A diferença é real.</p>
-        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-block mt-8 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-10 py-4 rounded-xl text-lg shadow-xl transition">
+        <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow inline-block mt-8 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-10 py-4 rounded-xl text-lg shadow-xl transition">
           Quero Uma Apresentação Gratuita →
         </a>
         <p className="text-white/50 text-sm mt-4">Sem licitação · Sem burocracia · Sem custo de consultoria</p>
@@ -367,12 +419,12 @@ const Index = () => {
       {/* ===== COMO FUNCIONA ===== */}
       <section className="py-24 text-white" style={{ background: "linear-gradient(135deg, #0D1F4A, #1B5FAA)" }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold text-white text-center">Como Funciona a Contratação para Órgãos</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-white text-center">Como Funciona a Contratação para Órgãos</h2>
           <p className="text-white/70 mt-3 text-center">Processo simples e eficiente para seu órgão aderir ao plano de saúde.</p>
           <div className="relative flex flex-col md:flex-row justify-between items-start max-w-5xl mx-auto mt-16">
             <div className="hidden md:block absolute h-0.5 bg-[#F97316]/40 top-6 left-[10%] right-[10%] z-0" />
             {steps.map((s) => (
-              <div key={s.n} className="flex flex-col items-center text-center z-10 flex-1 mb-10 md:mb-0">
+              <div key={s.n} className="scroll-reveal flex flex-col items-center text-center z-10 flex-1 mb-10 md:mb-0">
                 <div className="w-12 h-12 rounded-full bg-[#F97316] text-[#1B3461] font-black text-lg flex items-center justify-center shadow-lg">{s.n}</div>
                 <p className="font-bold text-white text-sm mt-4">{s.title}</p>
                 <p className="text-white/70 text-xs mt-2 max-w-[140px]">{s.desc}</p>
@@ -387,10 +439,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== POR QUE PLAN10 (ALT 7 — selos de confiança) ===== */}
+      {/* ===== POR QUE PLAN10 ===== */}
       <section className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Por que confiar na Plan10 Saúde para sua Instituição?</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Por que confiar na Plan10 Saúde para sua Instituição?</h2>
           <p className="text-gray-500 mt-3 text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="grid md:grid-cols-3 gap-6 mt-14 max-w-4xl mx-auto">
             {[
@@ -398,7 +450,7 @@ const Index = () => {
               { num: "+200", label: "Órgãos Atendidos", desc: "Parcerias com ministérios, autarquias e tribunais" },
               { num: "+50 Mil", label: "Vidas Atendidas", desc: "Milhares de servidores e seus familiares protegidos" },
             ].map((m) => (
-              <div key={m.label} className="rounded-2xl p-8 text-center" style={{ backgroundColor: "#F0F5FF" }}>
+              <div key={m.label} className="scroll-reveal rounded-2xl p-8 text-center" style={{ backgroundColor: "#F0F5FF" }}>
                 <p className="text-5xl font-black text-[#F97316]">{m.num}</p>
                 <p className="font-bold text-[#1B3461] mt-2">{m.label}</p>
                 <p className="text-gray-500 text-sm mt-2">{m.desc}</p>
@@ -408,14 +460,14 @@ const Index = () => {
 
           {/* Selos de confiança */}
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-14 mb-10 max-w-3xl mx-auto">
-            <div className="flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
+            <div className="scroll-reveal scroll-reveal-delay-1 hover-lift flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
               <div className="flex items-center gap-1 text-[#F97316]">
                 {"★★★★★".split("").map((s, i) => <span key={i} className="text-xl">{s}</span>)}
               </div>
               <span className="font-black text-2xl text-[#1B3461] mt-1">4,9/5</span>
               <span className="text-xs text-gray-500 mt-1 text-center">Avaliação dos órgãos</span>
             </div>
-            <div className="flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
+            <div className="scroll-reveal scroll-reveal-delay-2 hover-lift flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
               <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-8 w-auto object-contain mb-2"/>
               <span className="text-xs font-semibold text-[#1B3461] text-center">Credenciado pela GEAP</span>
               <div className="flex items-center gap-1 mt-1">
@@ -423,14 +475,14 @@ const Index = () => {
                 <span className="text-[10px] text-[#22A851] font-medium">Parceiro Oficial</span>
               </div>
             </div>
-            <div className="flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
+            <div className="scroll-reveal scroll-reveal-delay-3 hover-lift flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
               <div className="w-10 h-10 rounded-full bg-[#1B3461] flex items-center justify-center mb-2">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="white" strokeWidth="1.8"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="white" strokeWidth="1.8" strokeLinecap="round"/></svg>
               </div>
               <span className="text-xs font-semibold text-[#1B3461] text-center">LGPD</span>
               <span className="text-[10px] text-gray-500 mt-0.5 text-center">SSL 256-bit</span>
             </div>
-            <div className="flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
+            <div className="scroll-reveal scroll-reveal-delay-4 hover-lift flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
               <div className="w-10 h-10 rounded-full bg-[#F97316] flex items-center justify-center mb-2">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 15l-4.5 2.5 1.2-5-4-3.5 5.2-.4L12 4l2.1 4.6 5.2.4-4 3.5 1.2 5z" fill="white"/></svg>
               </div>
@@ -448,7 +500,7 @@ const Index = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-10 py-4 rounded-xl text-base shadow-lg transition">
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow inline-block bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-10 py-4 rounded-xl text-base shadow-lg transition">
               Proteger a saúde dos servidores do meu órgão
             </a>
           </div>
@@ -458,12 +510,12 @@ const Index = () => {
       {/* ===== FORMULÁRIO ===== */}
       <section id="formulario" className="py-24" style={{ backgroundColor: "#F0F5FF" }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Solicite uma Apresentação Institucional para seu Órgão</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Solicite uma Apresentação Institucional para seu Órgão</h2>
           <p className="text-gray-500 mt-3 text-center">Preencha o formulário e um consultor especializado entrará em contato em até 24h.</p>
           <div className="bg-[#F97316] rounded-2xl p-4 text-center text-white font-semibold text-sm mb-6 max-w-2xl mx-auto mt-12">
             ⚡ Vagas limitadas para apresentações este mês — garanta a sua agora
           </div>
-          <div className="max-w-2xl mx-auto bg-white shadow-2xl rounded-3xl p-10">
+          <div className="scroll-reveal max-w-2xl mx-auto bg-white shadow-2xl rounded-3xl p-10">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="font-medium text-[#1B3461] text-sm mb-1 block">Nome</label>
@@ -512,7 +564,7 @@ const Index = () => {
                   Concordo com a Política de Privacidade e autorizo o tratamento dos meus dados conforme a Lei Geral de Proteção de Dados (LGPD).
                 </label>
               </div>
-              <button type="submit" className="w-full mt-6 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-3 transition shadow-lg">
+              <button type="submit" className="hover-glow w-full mt-6 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-3 transition shadow-lg">
                 ✉️ Quero Minha Apresentação Gratuita
               </button>
             </form>
@@ -523,7 +575,7 @@ const Index = () => {
       {/* ===== FAQ ===== */}
       <section className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Dúvidas Frequentes</h2>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Dúvidas Frequentes</h2>
           <p className="text-gray-500 mt-3 text-center">Encontre respostas para perguntas comuns sobre o convênio.</p>
           <div className="max-w-3xl mx-auto mt-14">
             {faqItems.map((item, i) => (
@@ -573,7 +625,7 @@ const Index = () => {
       {/* ===== CTA FLUTUANTE MOBILE ===== */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-white/20" style={{ backgroundColor: "#0D1F4A" }}>
         <div className="py-3 px-4">
-          <a href={WA} target="_blank" rel="noopener noreferrer" className="block w-full bg-[#F97316] text-white font-bold py-3.5 rounded-xl text-base shadow-2xl text-center">
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow block w-full bg-[#F97316] text-white font-bold py-3.5 rounded-xl text-base shadow-2xl text-center">
             📱 Falar com Consultor — WhatsApp
           </a>
         </div>
