@@ -1,5 +1,14 @@
 import { useState } from "react";
 
+const ChevronSvg = ({ open }: { open: boolean }) => (
+  <svg
+    className={`w-5 h-5 text-accent transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+    fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+);
+
 const GeapLogoSvg = (
   <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
     <circle cx="20" cy="20" r="13" fill="none" stroke="white" strokeWidth="1.8" />
@@ -11,22 +20,16 @@ const GeapLogoSvg = (
   </svg>
 );
 
-const ChevronSvg = ({ open }: { open: boolean }) => (
-  <svg
-    className={`w-5 h-5 text-accent transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-    fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-  </svg>
-);
-
 const WA = "https://wa.me/5511938043333";
 
-const Index = () => {
-  
-  const [faqOpen, setFaqOpen] = useState<number | null>(null);
+const CheckIcon = () => (
+  <div className="w-5 h-5 rounded-full bg-[#22A851] flex items-center justify-center flex-shrink-0">
+    <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
+  </div>
+);
 
-  // Form state
+const Index = () => {
+  const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [orgao, setOrgao] = useState("");
@@ -45,24 +48,70 @@ const Index = () => {
     );
   };
 
-
-
   const beneficios = [
-    { emoji: "🏛️", title: "Dispensa de Licitação", desc: "A natureza jurídica da GEAP permite contratação direta, simplificando o processo de adesão sem necessidade de licitação pública." },
-    { emoji: "⭐", title: "Tradição e Solidez", desc: "Desde 1945 cuidando da saúde dos servidores públicos federais, estaduais e municipais ativos, aposentados e seus familiares." },
-    { emoji: "🤝", title: "Autogestão Sem Fins Lucrativos", desc: "A GEAP reverte todos os seus recursos para a assistência integral dos beneficiários — sem intermediários com fins lucrativos." },
-    { emoji: "💰", title: "Subsídio Governamental", desc: "Reduz drasticamente o valor final pago pelo servidor, calculado por faixa salarial, tipo de plano e número de dependentes." },
-    { emoji: "👨‍👩‍👧‍👦", title: "Dependentes Ampliados", desc: "Inclui pais, sogros, irmãos, sobrinhos, netos, primos e bisnetos — cobertura familiar completa sem burocracia." },
-    { emoji: "🏥", title: "Rede com 15 Mil Prestadores", desc: "Mais de 15 mil prestadores em 2.300 municípios, com hospitais premium e clínicas de referência em todo o Brasil." },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="#1B3461" strokeWidth="1.8" fill="none" strokeLinecap="round"/><path d="M9 12l2 2 4-4" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
+      title: "Dispensa de Licitação",
+      desc: "A natureza jurídica da GEAP permite contratação direta, simplificando o processo de adesão sem necessidade de licitação pública."
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="8" r="4" stroke="#1B3461" strokeWidth="1.8"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/></svg>,
+      title: "Tradição e Solidez",
+      desc: "Desde 1945 cuidando da saúde dos servidores públicos federais, estaduais e municipais ativos, aposentados e seus familiares."
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="#1B3461" strokeWidth="1.8"/></svg>,
+      title: "Autogestão Sem Fins Lucrativos",
+      desc: "A GEAP reverte todos os seus recursos para a assistência integral dos beneficiários — sem intermediários com fins lucrativos."
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B3461" strokeWidth="1.8"/><path d="M12 7v10M9.5 9.5C9.5 8.4 10.6 7.5 12 7.5s2.5.9 2.5 2-.9 2-2.5 2-2.5.9-2.5 2 1.1 2 2.5 2 2.5-.9 2.5-2" stroke="#1B3461" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+      title: "Subsídio Governamental",
+      desc: "Reduz drasticamente o valor final pago pelo servidor, calculado por faixa salarial, tipo de plano e número de dependentes."
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/><circle cx="9" cy="7" r="4" stroke="#1B3461" strokeWidth="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/></svg>,
+      title: "Dependentes Ampliados",
+      desc: "Inclui pais, sogros, irmãos, sobrinhos, netos, primos e bisnetos — cobertura familiar completa sem burocracia."
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#1B3461" strokeWidth="1.8"/><circle cx="12" cy="9" r="2.5" stroke="#1B3461" strokeWidth="1.8"/></svg>,
+      title: "Rede com 15 Mil Prestadores",
+      desc: "Mais de 15 mil prestadores em 2.300 municípios, com hospitais premium e clínicas de referência em todo o Brasil."
+    },
   ];
 
   const diferenciais = [
-    { emoji: "🩺", title: "Cobertura Completa", desc: "Internações, cirurgias, consultas, exames e tratamentos de alta complexidade." },
-    { emoji: "💻", title: "Atendimento Virtual e Presencial", desc: "Telemedicina integrada e atendimento presencial em toda a rede credenciada." },
-    { emoji: "🏷️", title: "Isenção de Coparticipação", desc: "Em diversos procedimentos, reduzindo o custo direto ao servidor e seus dependentes." },
-    { emoji: "💳", title: "Subsídio Governamental", desc: "Reduz o valor final pago pelo servidor — benefício exclusivo para órgãos conveniados." },
-    { emoji: "✅", title: "Sem Taxa de Adesão", desc: "Nenhum custo adicional para o servidor aderir ao plano do seu órgão." },
-    { emoji: "🔓", title: "Gestão Personalizada", desc: "Suporte dedicado e soluções sob medida para cada realidade institucional." },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#1B3461" strokeWidth="1.8"/><path d="M12 8v8M8 12h8" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
+      title: "Cobertura Completa",
+      desc: "Internações, cirurgias e tratamentos de alta complexidade"
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#1B3461" strokeWidth="1.8"/><path d="M8 21h8M12 17v4" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/></svg>,
+      title: "Atendimento Virtual",
+      desc: "Telemedicina e atendimento presencial integrados"
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" stroke="#1B3461" strokeWidth="1.8"/><circle cx="7" cy="7" r="1.5" fill="#1B3461"/></svg>,
+      title: "Isenção de Coparticipação",
+      desc: "Reduz o custo direto ao servidor"
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B3461" strokeWidth="1.8"/><path d="M12 6v12M9 9.5C9 8.1 10.3 7 12 7s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5S10.3 17 12 17s3-1.1 3-2.5" stroke="#1B3461" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+      title: "Subsídio Governamental",
+      desc: "Valor final reduzido para o servidor"
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B3461" strokeWidth="1.8"/><path d="M8.5 12l2.5 2.5 4.5-4.5" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg>,
+      title: "Sem Taxa de Adesão",
+      desc: "Nenhum custo adicional para aderir"
+    },
+    {
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#1B3461" strokeWidth="1.8"/><path d="M9 12h6M9 16h4" stroke="#1B3461" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+      title: "Gestão Personalizada",
+      desc: "Suporte dedicado sob medida para o órgão"
+    },
   ];
 
   const orgaos = [
@@ -116,66 +165,82 @@ const Index = () => {
     "LGPD — Dados Protegidos",
   ];
 
+  const coberturas = [
+    {
+      img: "/assistencia-medica.jpg",
+      title: "Assistência Médica",
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M4.5 6.5C4.5 4.57 6.07 3 8 3s3.5 1.57 3.5 3.5V11c0 2.76-2.24 5-5 5a5 5 0 01-5-5V6.5" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/><path d="M6.5 3v4M9.5 3v4" stroke="#1B3461" strokeWidth="1.5" strokeLinecap="round"/><path d="M11.5 13.5A6.5 6.5 0 0018 20a3 3 0 003-3v-1" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round"/><circle cx="21" cy="15.5" r="1.5" fill="#1B3461"/></svg>,
+      items: ["Consultas e Exames", "Internações Hospitalares", "Cirurgias e Tratamentos"],
+    },
+    {
+      img: "/saude-preventiva.jpg",
+      title: "Saúde Preventiva",
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M3 12h3l2-7 4 14 3-9 2 5 1-3h3" stroke="#1B3461" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+      items: ["Programas de Prevenção", "Acompanhamento de Doenças Crônicas", "Saúde Mental", "Promoção à Saúde"],
+    },
+    {
+      img: "/assistencia-farmaceutica.jpg",
+      title: "Assistência Farmacêutica",
+      icon: <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none"><path d="M10.5 20.5L3.5 13.5a5 5 0 017.07-7.07l7 7a5 5 0 01-7.07 7.07z" stroke="#1B3461" strokeWidth="1.8"/><path d="M7 9.5l7.5 7.5" stroke="#22A851" strokeWidth="1.8" strokeLinecap="round"/></svg>,
+      items: ["Medicamentos com Desconto", "Rede de Farmácias Conveniadas", "Auxílio Medicamentoso"],
+    },
+  ];
+
   const inputClass = "border border-gray-200 rounded-xl px-4 py-3 w-full text-sm focus:border-[#1B5FAA] focus:ring-2 focus:ring-[#1B5FAA]/20 outline-none transition font-body";
 
   return (
     <div className="font-body overflow-x-hidden w-full">
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');`}</style>
 
-      {/* ===== HEADER ===== */}
+      {/* ===== HEADER (ALT 1 — 2 logos) ===== */}
       <header className="sticky top-0 z-50 w-full overflow-hidden"
-        style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)' }}>
-        <div className="flex items-center justify-center gap-3 sm:gap-10 px-3 sm:px-8 py-3 h-16 sm:h-20 w-full">
-          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-7 sm:h-12 w-auto object-contain flex-shrink-0 max-w-[100px] sm:max-w-[160px]" />
-          <div className="flex-shrink-0">
-            <svg width="75" height="25" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" className="w-[75px] h-[25px] sm:w-[110px] sm:h-[37px]">
-              <circle cx="20" cy="20" r="13" fill="none" stroke="white" strokeWidth="1.8"/>
-              <ellipse cx="20" cy="20" rx="7" ry="13" fill="none" stroke="white" strokeWidth="1.4"/>
-              <line x1="7" y1="15" x2="33" y2="15" stroke="white" strokeWidth="1.2"/>
-              <line x1="7" y1="20" x2="33" y2="20" stroke="white" strokeWidth="1.2"/>
-              <line x1="7" y1="25" x2="33" y2="25" stroke="white" strokeWidth="1.2"/>
-              <text x="40" y="28" fill="white" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="22" letterSpacing="2">GEAP</text>
-            </svg>
-          </div>
-          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-7 sm:h-11 w-auto object-contain flex-shrink-0 max-w-[90px] sm:max-w-[150px]" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
+        style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 60%, #1B5FAA 100%)' }}>
+        <div className="flex items-center justify-between px-6 sm:px-12 h-16 sm:h-20 max-w-7xl mx-auto w-full">
+          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-8 sm:h-12 w-auto object-contain flex-shrink-0" />
+          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-8 sm:h-11 w-auto object-contain flex-shrink-0" style={{ filter: 'brightness(0) invert(1)', opacity: 0.95 }} />
         </div>
       </header>
 
-      {/* ===== HERO ===== */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ background: "radial-gradient(ellipse at 30% 20%, #2563EB44 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, #1B5FAA55 0%, transparent 50%), linear-gradient(135deg, #050D1F 0%, #0D1F4A 40%, #1B3461 70%, #1B5FAA 100%)" }}>
-        <div className="w-72 h-72 max-w-[50vw] rounded-full bg-[#F97316]/10 blur-3xl absolute top-10 left-10 pointer-events-none z-0" />
-        <div className="w-64 h-64 max-w-[50vw] rounded-full bg-[#1B5FAA]/30 blur-3xl absolute bottom-10 right-10 pointer-events-none z-0" />
-        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 py-24 text-center">
-          <span className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/50 text-[#F97316] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6 text-center">
-            ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
-          </span>
-          <h1 className="font-display font-black text-3xl sm:text-4xl md:text-6xl leading-tight text-white">
-            O Plano Oficial de Saúde do <span style={{ color: "#F97316" }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
-          </h1>
-          <p className="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mt-6">
-            Contratação direta sem licitação. Rede com mais de 15 mil prestadores em 2.300 municípios. Subsídio governamental para servidores e dependentes.
-          </p>
-          <div className="mt-10 max-w-lg mx-auto text-left grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {["Dispensa de licitação garantida", "Redução de carências conforme ANS", "Rede com +15 mil prestadores", "Adesão facilitada para dependentes"].map((t) => (
-              <div key={t} className="flex items-center gap-2 text-white/90 text-sm">✅ {t}</div>
-            ))}
+      {/* ===== HERO (ALT 2 — split com imagem) ===== */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <img src="/familia-hero.jpg" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(9,25,60,0.92) 0%, rgba(13,31,74,0.88) 40%, rgba(13,31,74,0.4) 70%, transparent 100%)' }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 py-24 sm:py-32 w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/40 text-[#F97316] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6">
+                ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
+              </div>
+              <h1 className="font-display font-black text-3xl sm:text-5xl text-white leading-tight mb-4">
+                O Plano de Saúde Oficial do <span style={{ color: '#F97316' }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
+              </h1>
+              <p className="font-body text-base sm:text-lg text-white/75 mb-8 max-w-lg">
+                Contratação direta sem licitação · Rede nacional · Subsídio governamental
+              </p>
+              <div className="flex flex-col gap-3 mb-10">
+                {["Condições especiais para órgãos públicos", "Redução de carências conforme ANS", "Rede com mais de 15 mil prestadores", "Adesão facilitada para servidores e agregados"].map((t) => (
+                  <div key={t} className="flex items-center gap-3 text-white text-sm sm:text-base">
+                    <CheckIcon />
+                    {t}
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105 text-center">
+                  Quero Informações para Meu Órgão
+                </a>
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="border-2 border-white/60 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all text-center">
+                  Falar com Consultor Especializado
+                </a>
+              </div>
+              <p className="text-white/50 text-xs mt-3 flex items-center gap-2">🔒 Apresentação gratuita · Sem compromisso · Resposta em até 24h</p>
+            </div>
+            <div className="hidden md:block" />
           </div>
-          <div className="flex flex-wrap justify-center gap-4 mt-12">
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] hover:bg-[#ea6c0a] text-white font-semibold px-8 py-4 rounded-xl text-base shadow-lg transition">
-              Quero Informações para Meu Órgão
-            </a>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl text-base transition">
-              Falar com Consultor Especializado
-            </a>
-            <a href="#formulario" className="border border-white/40 text-white/80 hover:bg-white/5 px-6 py-3 rounded-xl text-sm transition">
-              Solicitar Apresentação ↓
-            </a>
-          </div>
-          <p className="text-white/60 text-xs mt-4 text-center">🔒 Apresentações institucionais gratuitas · Sem compromisso · Resposta em até 24h</p>
         </div>
       </section>
 
-      {/* ===== BARRA DE PROVA SOCIAL ===== */}
+      {/* ===== BARRA DE PROVA SOCIAL (ALT 3) ===== */}
       <div className="bg-[#F97316] py-6 px-6 w-full overflow-hidden">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
           <div className="text-center text-white">
@@ -195,7 +260,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* ===== BENEFÍCIOS ===== */}
+      {/* ===== BENEFÍCIOS (ALT 4 — SVG icons + hover) ===== */}
       <section id="beneficios" className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">
@@ -204,8 +269,10 @@ const Index = () => {
           <p className="text-gray-500 mt-3 text-lg text-center">Diferenciais que só um plano oficial do servidor público pode oferecer.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-14">
             {beneficios.map((b) => (
-              <div key={b.title} className="bg-white border border-gray-100 shadow-md hover:shadow-xl rounded-2xl p-7 transition-shadow duration-300 border-t-4 border-t-[#22A851]">
-                <div className="bg-[#22A851]/10 rounded-xl w-12 h-12 flex items-center justify-center text-2xl mb-5">{b.emoji}</div>
+              <div key={b.title} className="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group">
+                <div className="w-12 h-12 rounded-xl bg-[#1B3461]/[0.08] flex items-center justify-center mb-5 group-hover:bg-[#22A851]/15 transition-colors duration-300">
+                  {b.icon}
+                </div>
                 <h3 className="font-display font-bold text-[#1B3461] text-lg mb-2">{b.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
               </div>
@@ -214,15 +281,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== DIFERENCIAIS ===== */}
-      <section className="py-24" style={{ backgroundColor: "#F0F5FF" }}>
+      {/* ===== DIFERENCIAIS (ALT 5 — compacto + SVG icons) ===== */}
+      <section className="py-16" style={{ backgroundColor: "#F0F5FF" }}>
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Nossos Diferenciais para seu Órgão Público</h2>
           <p className="text-gray-500 mt-3 text-center">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-14">
             {diferenciais.map((d) => (
               <div key={d.title} className="text-center p-6">
-                <div className="bg-white shadow-md rounded-2xl w-16 h-16 flex items-center justify-center text-3xl mx-auto mb-5">{d.emoji}</div>
+                <div className="bg-white shadow-md rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-5">
+                  {d.icon}
+                </div>
                 <h3 className="font-display font-bold text-[#1B3461] text-base mb-2">{d.title}</h3>
                 <p className="text-gray-600 text-sm">{d.desc}</p>
               </div>
@@ -231,27 +300,31 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== COBERTURAS ===== */}
+      {/* ===== COBERTURAS (ALT 6 — imagens reais) ===== */}
       <section id="coberturas" className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Coberturas e Benefícios para seu Órgão Público</h2>
           <p className="text-gray-500 mt-3 text-center">Tudo o que seu órgão precisa para cuidar da saúde dos colaboradores.</p>
           <div className="grid md:grid-cols-3 gap-6 mt-14">
-            {[
-              { emoji: "🩺", title: "Assistência Médica", items: ["Consultas e Exames", "Internações Hospitalares", "Cirurgias e Tratamentos"] },
-              { emoji: "❤️", title: "Saúde Preventiva", items: ["Programas de Prevenção", "Acompanhamento de Doenças Crônicas", "Promoção à Saúde", "Saúde Mental"] },
-              { emoji: "💊", title: "Assistência Farmacêutica", items: ["Medicamentos com Desconto", "Rede de Farmácias Conveniadas", "Auxílio Medicamentoso"] },
-            ].map((c) => (
-              <div key={c.title} className="bg-white border border-gray-200 shadow-sm rounded-2xl p-8 hover:shadow-md transition">
-                <div className="bg-[#1B5FAA]/10 rounded-xl w-14 h-14 flex items-center justify-center text-3xl mb-6">{c.emoji}</div>
-                <h3 className="font-display font-bold text-[#1B3461] text-xl mb-4">{c.title}</h3>
-                <ul className="space-y-2">
-                  {c.items.map((item) => (
-                    <li key={item} className="text-gray-600 text-sm flex items-center gap-2">
-                      <span className="text-[#1B5FAA]">•</span> {item}
-                    </li>
-                  ))}
-                </ul>
+            {coberturas.map((c) => (
+              <div key={c.title} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={c.img} alt={c.title} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(27,52,97,0.6) 100%)' }} />
+                </div>
+                <div className="p-7">
+                  <div className="w-10 h-10 rounded-lg bg-[#1B5FAA]/10 flex items-center justify-center mb-4">
+                    {c.icon}
+                  </div>
+                  <h3 className="font-display font-bold text-[#1B3461] text-xl mb-3">{c.title}</h3>
+                  <ul className="space-y-2">
+                    {c.items.map((item) => (
+                      <li key={item} className="text-gray-600 text-sm flex items-center gap-2">
+                        <span className="text-[#22A851]">•</span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -314,7 +387,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== POR QUE PLAN10 ===== */}
+      {/* ===== POR QUE PLAN10 (ALT 7 — selos de confiança) ===== */}
       <section className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-4xl font-bold text-[#1B3461] text-center">Por que confiar na Plan10 Saúde para sua Instituição?</h2>
@@ -332,7 +405,41 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <p className="max-w-2xl mx-auto text-center mt-12 text-gray-600 text-base">
+
+          {/* Selos de confiança */}
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-14 mb-10 max-w-3xl mx-auto">
+            <div className="flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
+              <div className="flex items-center gap-1 text-[#F97316]">
+                {"★★★★★".split("").map((s, i) => <span key={i} className="text-xl">{s}</span>)}
+              </div>
+              <span className="font-black text-2xl text-[#1B3461] mt-1">4,9/5</span>
+              <span className="text-xs text-gray-500 mt-1 text-center">Avaliação dos órgãos</span>
+            </div>
+            <div className="flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
+              <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-8 w-auto object-contain mb-2"/>
+              <span className="text-xs font-semibold text-[#1B3461] text-center">Credenciado pela GEAP</span>
+              <div className="flex items-center gap-1 mt-1">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#22A851"/><path d="M8 12l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+                <span className="text-[10px] text-[#22A851] font-medium">Parceiro Oficial</span>
+              </div>
+            </div>
+            <div className="flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
+              <div className="w-10 h-10 rounded-full bg-[#1B3461] flex items-center justify-center mb-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="white" strokeWidth="1.8"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="white" strokeWidth="1.8" strokeLinecap="round"/></svg>
+              </div>
+              <span className="text-xs font-semibold text-[#1B3461] text-center">LGPD</span>
+              <span className="text-[10px] text-gray-500 mt-0.5 text-center">SSL 256-bit</span>
+            </div>
+            <div className="flex flex-col items-center bg-[#F0F5FF] rounded-2xl px-6 py-5 shadow-sm border border-gray-100 min-w-[130px]">
+              <div className="w-10 h-10 rounded-full bg-[#F97316] flex items-center justify-center mb-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 15l-4.5 2.5 1.2-5-4-3.5 5.2-.4L12 4l2.1 4.6 5.2.4-4 3.5 1.2 5z" fill="white"/></svg>
+              </div>
+              <span className="font-black text-xl text-[#1B3461]">+15 anos</span>
+              <span className="text-[10px] text-gray-500 mt-0.5 text-center">no setor público</span>
+            </div>
+          </div>
+
+          <p className="max-w-2xl mx-auto text-center mt-4 text-gray-600 text-base">
             A Plan10 Saúde oferece consultoria gratuita e especializada para órgãos públicos, auxiliando em todas as etapas: análise técnica, apoio jurídico, comunicação interna e suporte contínuo.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
