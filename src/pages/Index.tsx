@@ -336,18 +336,18 @@ const Index = () => {
       </div>
 
       {/* ===== DIFERENCIAIS ===== */}
-      <section className="py-16" style={{ backgroundColor: "#F0F5FF" }}>
+      <section className="py-16" style={{ background: 'linear-gradient(135deg, #0D1F4A 0%, #1B3461 100%)' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="scroll-reveal font-display text-4xl font-bold text-[#1B3461] text-center">Diferenciais que só a GEAP oferece</h2>
-          <p className="text-gray-500 mt-3 text-center">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
+          <h2 className="scroll-reveal font-display text-4xl font-bold text-white text-center">Diferenciais que só a GEAP oferece</h2>
+          <p className="text-white/60 mt-3 text-center">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-14">
             {diferenciais.map((d, i) => (
-              <div key={d.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} text-center p-6`}>
-                <div className="bg-white shadow-md rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-5">
+              <div key={d.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift group flex flex-col items-center text-center p-7 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#F97316]/40 transition-all duration-300 cursor-default`}>
+                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-5 group-hover:bg-[#F97316]/20 transition-colors duration-300">
                   {d.icon}
                 </div>
-                <h3 className="font-display font-bold text-[#1B3461] text-base mb-2">{d.title}</h3>
-                <p className="text-gray-600 text-sm">{d.desc}</p>
+                <h3 className="font-bold text-white text-base mb-2">{d.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
