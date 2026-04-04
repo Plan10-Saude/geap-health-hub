@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 const GeapLogoSvg = (
-  <svg width="130" height="44" viewBox="0 0 130 44" xmlns="http://www.w3.org/2000/svg">
-    <rect width="130" height="44" rx="5" fill="#1B5FAA" />
-    <circle cx="22" cy="22" r="12" fill="none" stroke="white" strokeWidth="1.5" />
-    <ellipse cx="22" cy="22" rx="6" ry="12" fill="none" stroke="white" strokeWidth="1.2" />
-    <line x1="10" y1="17" x2="34" y2="17" stroke="white" strokeWidth="1" />
-    <line x1="10" y1="22" x2="34" y2="22" stroke="white" strokeWidth="1" />
-    <line x1="10" y1="27" x2="34" y2="27" stroke="white" strokeWidth="1" />
-    <text x="42" y="30" fill="white" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="22" letterSpacing="1.5">GEAP</text>
+  <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="13" fill="none" stroke="white" strokeWidth="1.8" />
+    <ellipse cx="20" cy="20" rx="7" ry="13" fill="none" stroke="white" strokeWidth="1.4" />
+    <line x1="7" y1="15" x2="33" y2="15" stroke="white" strokeWidth="1.2" />
+    <line x1="7" y1="20" x2="33" y2="20" stroke="white" strokeWidth="1.2" />
+    <line x1="7" y1="25" x2="33" y2="25" stroke="white" strokeWidth="1.2" />
+    <text x="40" y="28" fill="white" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="22" letterSpacing="2">GEAP</text>
   </svg>
 );
 
