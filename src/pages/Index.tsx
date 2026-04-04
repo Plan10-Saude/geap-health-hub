@@ -119,7 +119,7 @@ const Index = () => {
   const inputClass = "border border-gray-200 rounded-xl px-4 py-3 w-full text-sm focus:border-[#1B5FAA] focus:ring-2 focus:ring-[#1B5FAA]/20 outline-none transition font-body";
 
   return (
-    <div className="font-body">
+    <div className="font-body overflow-x-hidden w-full">
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');`}</style>
 
       {/* ===== HEADER ===== */}
