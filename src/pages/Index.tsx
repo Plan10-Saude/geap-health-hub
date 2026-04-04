@@ -123,35 +123,17 @@ const Index = () => {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');`}</style>
 
       {/* ===== HEADER ===== */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="flex items-center justify-between px-6 md:px-12 h-20 max-w-7xl mx-auto">
-          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-12 w-auto object-contain" />
+      <header className="sticky top-0 z-50" style={{ background: "linear-gradient(90deg, #0D1F4A 0%, #1B3461 50%, #1B5FAA 100%)" }}>
+        <div className="flex items-center justify-between px-8 h-20 max-w-7xl mx-auto">
+          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-14 w-auto object-contain" />
           <div className="hidden md:block">{GeapLogoSvg}</div>
-          <div className="flex items-center gap-4">
-            <nav className="hidden md:flex gap-6 text-sm font-medium text-[#1B3461]">
-              {navLinks.map((l) => (
-                <a key={l.href} href={l.href} className="hover:text-[#F97316] transition">{l.label}</a>
-              ))}
-            </nav>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-[#ea6c0a] transition">
+          <div className="flex items-center gap-6">
+            <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="hidden md:block h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="bg-[#F97316] text-white font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-[#ea6c0a] transition">
               Falar com Consultor
             </a>
-            <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-              <svg className="w-6 h-6 text-[#1B3461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                {mobileOpen
-                  ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />}
-              </svg>
-            </button>
           </div>
         </div>
-        {mobileOpen && (
-          <nav className="md:hidden bg-white border-t border-gray-100 px-6 pb-4 flex flex-col gap-3">
-            {navLinks.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="text-sm font-medium text-[#1B3461] py-2">{l.label}</a>
-            ))}
-          </nav>
-        )}
       </header>
 
       {/* ===== HERO ===== */}
