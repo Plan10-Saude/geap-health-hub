@@ -145,7 +145,7 @@ const Index = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ background: "radial-gradient(ellipse at 30% 20%, #2563EB44 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, #1B5FAA55 0%, transparent 50%), linear-gradient(135deg, #050D1F 0%, #0D1F4A 40%, #1B3461 70%, #1B5FAA 100%)" }}>
         <div className="w-72 h-72 max-w-[50vw] rounded-full bg-[#F97316]/10 blur-3xl absolute top-10 left-10 pointer-events-none z-0" />
         <div className="w-64 h-64 max-w-[50vw] rounded-full bg-[#1B5FAA]/30 blur-3xl absolute bottom-10 right-10 pointer-events-none z-0" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 py-24 text-center">
           <span className="inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/50 text-[#F97316] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6 text-center">
             ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
           </span>
