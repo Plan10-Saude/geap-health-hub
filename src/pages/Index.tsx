@@ -439,7 +439,7 @@ const Index = () => {
       </section>
 
       {/* ===== RODAPÉ ===== */}
-      <footer className="py-16 px-8" style={{ backgroundColor: "#0D1F4A" }}>
+      <footer className="py-16 px-8 pb-20 md:pb-16" style={{ backgroundColor: "#0D1F4A" }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center items-center gap-8 flex-wrap pb-10 border-b border-white/20">
             <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
