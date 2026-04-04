@@ -23,7 +23,7 @@ const ChevronSvg = ({ open }: { open: boolean }) => (
 const WA = "https://wa.me/5511938043333";
 
 const Index = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   // Form state
