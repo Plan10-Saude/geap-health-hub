@@ -466,6 +466,15 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* ===== CTA FLUTUANTE MOBILE ===== */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-white/20" style={{ backgroundColor: "#0D1F4A" }}>
+        <div className="py-3 px-4">
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="block w-full bg-[#F97316] text-white font-bold py-3.5 rounded-xl text-base shadow-2xl text-center">
+            📱 Falar com Consultor — WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
