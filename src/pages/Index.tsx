@@ -488,7 +488,7 @@ const Index = () => {
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center mb-3 sm:mb-4">Por que contratar o plano GEAP com a Plan Saúde?</h2>
           <p className="text-gray-600 font-medium mb-6 sm:mb-8 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="flex flex-col items-center gap-4 mb-6 sm:mb-8">
-            <div className="flex flex-col items-center text-center gap-4 bg-[#F0F5FF] rounded-2xl px-8 sm:px-12 py-6 border border-[#1B3461]/10 shadow-sm mx-auto w-fit max-w-[90%]">
+            <div className="flex flex-col items-center text-center gap-4 bg-[#1B3461] rounded-2xl px-8 sm:px-12 py-6 border border-[#1B3461]/10 shadow-sm mx-auto w-fit max-w-[90%]">
               {/* Logos Plan Saúde × GEAP Saúde */}
               <div className="flex flex-row items-center justify-center gap-3 flex-nowrap">
                 <img
