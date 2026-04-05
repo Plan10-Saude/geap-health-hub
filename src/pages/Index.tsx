@@ -491,12 +491,13 @@ const Index = () => {
             <div className="flex flex-col items-center text-center gap-4 bg-[#F0F5FF] rounded-2xl px-8 sm:px-12 py-6 border border-[#1B3461]/10 shadow-sm mx-auto w-fit max-w-[90%]">
               {/* Logos Plan Saúde × GEAP Saúde */}
               <div className="flex flex-row items-center justify-center gap-3 flex-nowrap">
-                <img
-                  src="/logo-plan-saude.png"
-                  alt="Plan Saúde"
-                  className="h-9 sm:h-14 w-auto object-contain flex-shrink-0 max-w-[100px] sm:max-w-[160px]"
-                  style={{ mixBlendMode: 'multiply' }}
-                />
+                <div className="bg-[#1B3461] rounded-xl px-3 py-2 flex items-center justify-center flex-shrink-0">
+                  <img
+                    src="/logo-plan-saude.png"
+                    alt="Plan Saúde"
+                    className="h-9 sm:h-11 w-auto object-contain"
+                  />
+                </div>
                 <div className="flex flex-col items-center gap-1">
                   <div className="h-6 sm:h-8 w-px bg-[#1B3461]/20" />
                   <span className="text-[#1B3461]/40 text-xs">×</span>
