@@ -253,7 +253,7 @@ const Index = () => {
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
         <img src="/familia-hero.jpg" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(9,25,60,0.92) 0%, rgba(13,31,74,0.88) 40%, rgba(13,31,74,0.4) 70%, transparent 100%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 w-full flex flex-col md:grid md:grid-cols-2 gap-8 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16 w-full flex flex-col md:grid md:grid-cols-2 gap-8 items-center">
           <div className="text-left">
             <div className="scroll-reveal inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/40 text-[#F97316] rounded-full text-xs px-3 py-1 sm:px-4 sm:py-1.5 mb-4 sm:mb-6 font-semibold">
               ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
