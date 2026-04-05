@@ -337,7 +337,7 @@ const Index = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-8" style={{ background: 'linear-gradient(135deg, #0D1F4A 0%, #1B3461 100%)' }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-white text-center">Diferenciais que só a GEAP oferece</h2>
-          <p className="text-white/60 mt-2 sm:mt-3 text-center text-sm sm:text-base">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
+          <p className="text-white/75 font-medium mt-2 sm:mt-3 text-center text-sm sm:text-base">Serviços exclusivos para cuidar dos servidores e seus dependentes.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mt-10 sm:mt-14">
             {diferenciais.map((d, i) => (
               <div key={d.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift group flex flex-col items-center text-center p-5 sm:p-7 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#F97316]/40 transition-all duration-300 cursor-default`}>
