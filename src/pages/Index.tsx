@@ -244,7 +244,7 @@ const Index = () => {
       <header className="sticky top-0 z-50 w-full overflow-hidden"
         style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 60%, #1B5FAA 100%)' }}>
         <div className="flex items-center justify-center gap-8 sm:gap-16 px-4 h-14 sm:h-20 w-full overflow-hidden">
-          <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-7 sm:h-11 w-auto object-contain flex-shrink-0 max-w-[120px] sm:max-w-[180px]" />
+          <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-7 sm:h-11 w-auto object-contain flex-shrink-0 max-w-[120px] sm:max-w-[180px]" style={{ mixBlendMode: 'screen' }} />
           <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-7 sm:h-10 w-auto object-contain flex-shrink-0 max-w-[110px] sm:max-w-[160px]" style={{ filter: 'brightness(0) invert(1)', opacity: 0.93 }} />
         </div>
       </header>
@@ -706,7 +706,7 @@ const Index = () => {
       <footer className="py-12 sm:py-16 px-5 sm:px-8 pb-20 md:pb-16" style={{ backgroundColor: "#0D1F4A" }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center items-center gap-8 sm:gap-16 flex-wrap pb-8 sm:pb-10 border-b border-white/20">
-            <img src="/logo-plan10.png" alt="Plan10 Saúde" className="h-7 sm:h-10 w-auto object-contain brightness-0 invert opacity-90 flex-shrink-0" />
+            <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-7 sm:h-10 w-auto object-contain flex-shrink-0" style={{ mixBlendMode: 'screen', opacity: 0.95 }} />
             <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-7 sm:h-10 w-auto object-contain brightness-0 invert opacity-90 flex-shrink-0" />
           </div>
           <div className="text-center text-white/70 text-xs sm:text-sm mt-6 sm:mt-8 space-y-2">
