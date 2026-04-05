@@ -442,13 +442,16 @@ const Index = () => {
           </div>
 
           {/* Mobile stepper */}
-          <div className="flex flex-col md:hidden gap-6 max-w-sm mx-auto mt-10">
-            {steps.map((s) => (
-              <div key={s.n} className="scroll-reveal flex items-start gap-4 z-10">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#F97316] text-[#1B3461] font-black text-base sm:text-lg flex items-center justify-center shadow-lg flex-shrink-0">{s.n}</div>
-                <div className="flex flex-col">
+          <div className="flex flex-col md:hidden gap-0 max-w-xs mx-auto mt-8 w-full">
+            {steps.map((s, idx) => (
+              <div key={s.n} className="scroll-reveal flex items-start gap-4 relative pb-8 last:pb-0">
+                {idx < steps.length - 1 && (
+                  <div className="absolute left-5 top-10 bottom-0 w-0.5 bg-[#F97316]/30" />
+                )}
+                <div className="w-10 h-10 rounded-full bg-[#F97316] text-[#1B3461] font-black text-base flex items-center justify-center shadow-lg flex-shrink-0 z-10 relative">{s.n}</div>
+                <div className="flex flex-col pt-1">
                   <p className="font-bold text-white text-sm leading-snug">{s.title}</p>
-                  <p className="text-white/70 text-xs mt-1">{s.desc}</p>
+                  <p className="text-white/60 text-xs mt-1 leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             ))}
