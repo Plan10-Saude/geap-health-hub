@@ -250,7 +250,7 @@ const Index = () => {
       </header>
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
+      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
         <img src="/familia-hero.jpg" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(9,25,60,0.92) 0%, rgba(13,31,74,0.88) 40%, rgba(13,31,74,0.4) 70%, transparent 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 w-full flex flex-col md:grid md:grid-cols-2 gap-8 items-center">
