@@ -256,7 +256,7 @@ const Index = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16 w-full flex flex-col md:grid md:grid-cols-2 gap-8 items-center">
           <div className="text-left">
             <div className="scroll-reveal inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/40 text-[#F97316] rounded-full text-xs px-3 py-1 sm:px-4 sm:py-1.5 mb-4 sm:mb-6 font-semibold">
-              ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
+              O seu futuro muito mais tranquilo!
             </div>
             <h1 className="scroll-reveal scroll-reveal-delay-1 font-display font-black text-2xl sm:text-4xl md:text-5xl leading-tight text-white mb-3 sm:mb-4">
               O Plano de Saúde Oficial do <span style={{ color: '#F97316' }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
@@ -295,6 +295,23 @@ const Index = () => {
       {/* ===== BENEFÍCIOS ===== */}
       <section id="beneficios" className="bg-white py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex flex-col items-center gap-3 bg-[#F0F5FF] rounded-2xl px-10 py-5 border border-[#1B3461]/10 shadow-sm">
+              <img
+                src="/logo-geap-saude.png"
+                alt="GEAP Saúde"
+                className="h-10 w-auto object-contain"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+              <div className="flex items-center gap-2">
+                <div className="h-px w-8 bg-[#1B3461]/20" />
+                <span className="text-[#1B3461]/60 text-xs font-medium tracking-widest uppercase">
+                  Plano Oficial do Servidor Público
+                </span>
+                <div className="h-px w-8 bg-[#1B3461]/20" />
+              </div>
+            </div>
+          </div>
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">
             Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span>
           </h2>
@@ -468,10 +485,38 @@ const Index = () => {
       {/* ===== POR QUE PLAN10 ===== */}
       <section className="py-16 sm:py-24 px-4 sm:px-8" style={{ backgroundColor: '#F0F5FF' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-            <div className="h-px w-12 bg-[#F97316]" />
-            <span className="text-[#F97316] font-semibold text-sm tracking-widest uppercase">Parceiro Credenciado GEAP</span>
-            <div className="h-px w-12 bg-[#F97316]" />
+          <div className="flex flex-col items-center gap-4 mb-6">
+            {/* Logos lado a lado */}
+            <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
+              <img
+                src="/logo-plan-saude.png"
+                alt="Plan Saúde"
+                className="h-12 sm:h-14 w-auto object-contain"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+              <div className="flex flex-col items-center gap-1">
+                <div className="h-8 w-px bg-[#1B3461]/20" />
+                <span className="text-[#1B3461]/40 text-xs">×</span>
+                <div className="h-8 w-px bg-[#1B3461]/20" />
+              </div>
+              <img
+                src="/logo-geap-saude.png"
+                alt="GEAP Saúde"
+                className="h-12 sm:h-14 w-auto object-contain"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+            </div>
+            {/* Credenciado GEAP Saúde */}
+            <div className="inline-flex items-center gap-2 bg-[#22A851]/10 border border-[#22A851]/30 rounded-full px-4 py-1.5">
+              <div className="w-4 h-4 rounded-full bg-[#22A851] flex items-center justify-center flex-shrink-0">
+                <svg width="8" height="7" viewBox="0 0 10 8" fill="none">
+                  <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <span className="text-[#22A851] font-semibold text-xs tracking-wide">
+                Credenciado GEAP Saúde
+              </span>
+            </div>
           </div>
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
           <p className="text-gray-600 font-medium mt-2 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
