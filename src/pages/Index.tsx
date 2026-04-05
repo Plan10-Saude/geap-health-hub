@@ -488,36 +488,38 @@ const Index = () => {
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center mb-3 sm:mb-4">Por que contratar o plano GEAP com a Plan Saúde?</h2>
           <p className="text-gray-600 font-medium mb-6 sm:mb-8 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="flex flex-col items-center gap-4 mb-6 sm:mb-8">
-            {/* Logos lado a lado */}
-            <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
-              <img
-                src="/logo-plan-saude.png"
-                alt="Plan Saúde"
-                className="h-12 sm:h-14 w-auto object-contain"
-                style={{ mixBlendMode: 'multiply' }}
-              />
-              <div className="flex flex-col items-center gap-1">
-                <div className="h-8 w-px bg-[#1B3461]/20" />
-                <span className="text-[#1B3461]/40 text-xs">×</span>
-                <div className="h-8 w-px bg-[#1B3461]/20" />
+            <div className="flex flex-col items-center text-center gap-4 bg-[#F0F5FF] rounded-2xl px-8 sm:px-12 py-6 border border-[#1B3461]/10 shadow-sm mx-auto w-fit max-w-[90%]">
+              {/* Logos Plan Saúde × GEAP Saúde */}
+              <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
+                <img
+                  src="/logo-plan-saude.png"
+                  alt="Plan Saúde"
+                  className="h-12 sm:h-14 w-auto object-contain"
+                  style={{ mixBlendMode: 'multiply' }}
+                />
+                <div className="flex flex-col items-center gap-1">
+                  <div className="h-8 w-px bg-[#1B3461]/20" />
+                  <span className="text-[#1B3461]/40 text-xs">×</span>
+                  <div className="h-8 w-px bg-[#1B3461]/20" />
+                </div>
+                <img
+                  src="/logo-geap-saude.png"
+                  alt="GEAP Saúde"
+                  className="h-12 sm:h-14 w-auto object-contain"
+                  style={{ mixBlendMode: 'multiply' }}
+                />
               </div>
-              <img
-                src="/logo-geap-saude.png"
-                alt="GEAP Saúde"
-                className="h-12 sm:h-14 w-auto object-contain"
-                style={{ mixBlendMode: 'multiply' }}
-              />
-            </div>
-            {/* Credenciado GEAP Saúde */}
-            <div className="inline-flex items-center gap-2 bg-[#22A851]/10 border border-[#22A851]/30 rounded-full px-4 py-1.5">
-              <div className="w-4 h-4 rounded-full bg-[#22A851] flex items-center justify-center flex-shrink-0">
-                <svg width="8" height="7" viewBox="0 0 10 8" fill="none">
-                  <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+              {/* Badge Credenciado */}
+              <div className="inline-flex items-center gap-2 bg-[#22A851]/10 border border-[#22A851]/30 rounded-full px-4 py-1.5">
+                <div className="w-4 h-4 rounded-full bg-[#22A851] flex items-center justify-center flex-shrink-0">
+                  <svg width="8" height="7" viewBox="0 0 10 8" fill="none">
+                    <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <span className="text-[#22A851] font-semibold text-xs tracking-wide">
+                  Credenciado GEAP Saúde
+                </span>
               </div>
-              <span className="text-[#22A851] font-semibold text-xs tracking-wide">
-                Credenciado GEAP Saúde
-              </span>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14 max-w-4xl mx-auto">
@@ -758,8 +760,6 @@ const Index = () => {
             <p>Plan Saúde By Plan Group Ltda | GEAP Autogestão em Saúde</p>
             <p className="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 flex-wrap">
               <a href={WA} className="hover:text-white underline" target="_blank" rel="noopener noreferrer">11 9 3804-3333</a>
-              <span className="hidden sm:inline">|</span>
-              <a href="https://www.plangroup.com.br" className="hover:text-white underline" target="_blank" rel="noopener noreferrer">www.plangroup.com.br</a>
               <span className="hidden sm:inline">|</span>
               <a href="mailto:contato@plangroup.com.br" className="hover:text-white underline">contato@plangroup.com.br</a>
             </p>
