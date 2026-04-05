@@ -295,6 +295,10 @@ const Index = () => {
       {/* ===== BENEFÍCIOS ===== */}
       <section id="beneficios" className="bg-white py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
+          <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">
+            Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span>
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 font-medium mt-2 sm:mt-3 text-center">Um plano criado para o servidor público, com benefícios que o mercado privado não oferece.</p>
           <div className="flex justify-center mb-8">
             <div className="inline-flex flex-col items-center gap-3 bg-[#F0F5FF] rounded-2xl px-10 py-5 border border-[#1B3461]/10 shadow-sm">
               <img
@@ -312,10 +316,6 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">
-            Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span>
-          </h2>
-          <p className="text-sm sm:text-base text-gray-600 font-medium mt-2 sm:mt-3 text-center">Um plano criado para o servidor público, com benefícios que o mercado privado não oferece.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14">
             {beneficios.map((b, i) => (
               <div key={b.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-5 sm:p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group`}>
@@ -485,6 +485,8 @@ const Index = () => {
       {/* ===== POR QUE PLAN10 ===== */}
       <section className="py-16 sm:py-24 px-4 sm:px-8" style={{ backgroundColor: '#F0F5FF' }}>
         <div className="max-w-6xl mx-auto">
+          <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
+          <p className="text-gray-600 font-medium mt-2 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="flex flex-col items-center gap-4 mb-6">
             {/* Logos lado a lado */}
             <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
@@ -518,8 +520,6 @@ const Index = () => {
               </span>
             </div>
           </div>
-          <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
-          <p className="text-gray-600 font-medium mt-2 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14 max-w-4xl mx-auto">
             {[
               { num: "+15", label: "Anos de Experiência", desc: "Referência em planos coletivos para o setor público" },
