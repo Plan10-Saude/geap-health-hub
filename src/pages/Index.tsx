@@ -273,7 +273,7 @@ const Index = () => {
               ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={WA} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto justify-center inline-flex items-center bg-[#F97316] hover:bg-[#ea6c0a] text-white font-semibold text-sm px-5 py-3 sm:px-6 rounded-xl shadow-lg transition-all hover:scale-105 hover-glow whitespace-nowrap">
+              <a href="#formulario" rel="noopener noreferrer" className="w-full sm:w-auto justify-center inline-flex items-center bg-[#F97316] hover:bg-[#ea6c0a] text-white font-semibold text-sm px-5 py-3 sm:px-6 rounded-xl shadow-lg transition-all hover:scale-105 hover-glow whitespace-nowrap">
                 Quero mais informações
               </a>
               <a href={WA} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto justify-center inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-sm px-5 py-3 sm:px-6 rounded-xl shadow-lg transition-all hover:scale-105 whitespace-nowrap">
