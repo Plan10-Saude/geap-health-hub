@@ -495,18 +495,18 @@ const Index = () => {
                   src="/logo-plan-saude.png"
                   alt="Plan Saúde"
                   className="h-9 sm:h-14 w-auto object-contain flex-shrink-0 max-w-[100px] sm:max-w-[160px]"
-                  style={{ mixBlendMode: 'multiply' }}
+                  style={{ mixBlendMode: 'screen' }}
                 />
                 <div className="flex flex-col items-center gap-1">
-                  <div className="h-6 sm:h-8 w-px bg-[#1B3461]/20" />
-                  <span className="text-[#1B3461]/40 text-xs">×</span>
-                  <div className="h-6 sm:h-8 w-px bg-[#1B3461]/20" />
+                  <div className="h-6 sm:h-8 w-px bg-white/30" />
+                  <span className="text-white/50 text-xs">×</span>
+                  <div className="h-6 sm:h-8 w-px bg-white/30" />
                 </div>
                 <img
                   src="/logo-geap-saude.png"
                   alt="GEAP Saúde"
                   className="h-9 sm:h-14 w-auto object-contain flex-shrink-0 max-w-[120px] sm:max-w-[180px]"
-                  style={{ mixBlendMode: 'multiply' }}
+                  style={{ mixBlendMode: 'screen' }}
                 />
               </div>
               {/* Badge Credenciado */}
