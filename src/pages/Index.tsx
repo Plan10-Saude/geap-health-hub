@@ -645,7 +645,7 @@ const Index = () => {
       <section className="bg-white py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Dúvidas Frequentes</h2>
-          <p className="text-gray-500 mt-2 sm:mt-3 text-center text-sm sm:text-base">Encontre respostas para perguntas comuns sobre o convênio.</p>
+          <p className="text-gray-600 font-medium mt-2 sm:mt-3 text-center text-sm sm:text-base">Encontre respostas para perguntas comuns sobre o convênio.</p>
           <div className="max-w-2xl sm:max-w-3xl mx-auto mt-10 sm:mt-14 space-y-3">
             {faqTemas.map((tema, tIdx) => (
               <div key={tIdx}>
