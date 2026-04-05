@@ -580,7 +580,7 @@ const Index = () => {
       <section id="formulario" className="py-16 sm:py-24 px-4 sm:px-8" style={{ backgroundColor: "#F0F5FF" }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Solicite uma Apresentação Institucional para seu Órgão</h2>
-          <p className="text-gray-500 mt-2 text-sm sm:text-base text-center">Preencha o formulário e um consultor especializado entrará em contato em até 24h.</p>
+          <p className="text-gray-600 font-medium mt-2 text-sm sm:text-base text-center">Preencha o formulário e um consultor especializado entrará em contato em até 24h.</p>
           <div className="max-w-xl sm:max-w-2xl mx-auto bg-[#F97316] rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center text-white font-semibold text-xs sm:text-sm mb-5 sm:mb-6 mt-10 sm:mt-12">
             Vagas limitadas para apresentações este mês — garanta a sua agora
           </div>
