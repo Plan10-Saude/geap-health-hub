@@ -416,7 +416,7 @@ const Index = () => {
       {/* ===== CTA INTERMEDIÁRIO ===== */}
       <div className="py-12 sm:py-14 px-5 sm:px-8 text-center" style={{ background: "linear-gradient(to right, #1B3461, #1B5FAA)" }}>
         <h2 className="scroll-reveal font-display text-xl sm:text-3xl font-bold text-white leading-snug">Ainda não tem um plano de saúde de qualidade para os servidores?</h2>
-        <p className="text-white/80 mt-2 sm:mt-3 text-sm sm:text-lg">A apresentação é gratuita. O processo é simples. A diferença é real.</p>
+        <p className="text-white/80 font-medium mt-2 sm:mt-3 text-sm sm:text-lg">A apresentação é gratuita. O processo é simples. A diferença é real.</p>
         <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow inline-block mt-6 sm:mt-8 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold text-sm sm:text-base px-7 sm:px-10 py-3 sm:py-4 rounded-xl shadow-xl transition whitespace-nowrap">
           Quero Uma Apresentação Gratuita →
         </a>
