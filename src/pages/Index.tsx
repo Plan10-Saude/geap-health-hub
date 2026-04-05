@@ -300,7 +300,7 @@ const Index = () => {
           </h2>
           <p className="text-sm sm:text-base text-gray-600 font-medium mb-6 sm:mb-8 text-center">Um plano criado para o servidor público, com benefícios que o mercado privado não oferece.</p>
           <div className="flex justify-center">
-            <div className="inline-flex flex-col items-center gap-3 bg-[#F0F5FF] rounded-2xl px-10 py-5 border border-[#1B3461]/10 shadow-sm">
+            <div className="flex flex-col items-center text-center gap-3 bg-[#F0F5FF] rounded-2xl px-8 sm:px-10 py-5 border border-[#1B3461]/10 shadow-sm mx-auto w-fit max-w-[90%]">
               <img
                 src="/logo-geap-saude.png"
                 alt="GEAP Saúde"
@@ -309,7 +309,7 @@ const Index = () => {
               />
               <div className="flex items-center gap-2">
                 <div className="h-px w-8 bg-[#1B3461]/20" />
-                <span className="text-[#1B3461]/60 text-xs font-medium tracking-widest uppercase">
+                <span className="text-[#1B3461]/60 text-xs font-medium tracking-widest uppercase text-center">
                   Plano Oficial do Servidor Público
                 </span>
                 <div className="h-px w-8 bg-[#1B3461]/20" />
