@@ -356,7 +356,7 @@ const Index = () => {
       <section id="coberturas" className="bg-white py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Coberturas e Benefícios</h2>
-          <p className="text-gray-500 mt-2 sm:mt-3 text-center text-sm sm:text-base">Tudo o que seu órgão precisa para cuidar da saúde dos colaboradores.</p>
+          <p className="text-gray-600 font-medium mt-2 sm:mt-3 text-center text-sm sm:text-base">Diferenciais que só um plano oficial do servidor público pode oferecer.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mt-10 sm:mt-14">
             {coberturas.map((c, i) => (
               <div key={c.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100`}>
