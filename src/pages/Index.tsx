@@ -427,7 +427,7 @@ const Index = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-8 text-white" style={{ background: "linear-gradient(135deg, #0D1F4A, #1B5FAA)" }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-white text-center">Como Funciona a Contratação</h2>
-          <p className="text-white/70 mt-2 sm:mt-3 text-sm sm:text-base text-center">Processo simples e eficiente para seu órgão aderir ao plano de saúde.</p>
+          <p className="text-white/80 font-medium mt-2 sm:mt-3 text-sm sm:text-base text-center">Processo simples e eficiente para seu órgão aderir ao plano de saúde.</p>
 
           {/* Desktop stepper */}
           <div className="hidden md:flex relative justify-between items-start max-w-5xl mx-auto mt-12 sm:mt-16">
