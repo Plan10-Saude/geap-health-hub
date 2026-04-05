@@ -471,7 +471,7 @@ const Index = () => {
             <div className="h-px w-12 bg-[#F97316]" />
           </div>
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
-          <p className="text-gray-500 mt-2 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
+          <p className="text-gray-600 font-medium mt-2 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14 max-w-4xl mx-auto">
             {[
               { num: "+15", label: "Anos de Experiência", desc: "Referência em planos coletivos para o setor público" },
