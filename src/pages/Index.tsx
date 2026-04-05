@@ -392,7 +392,7 @@ const Index = () => {
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-white text-center">
             Para quais órgãos a <span style={{ color: '#F97316' }}>GEAP é indicada</span>
           </h2>
-          <p className="text-white/60 mt-2 sm:mt-3 text-center text-sm sm:text-base">Atendimento em todas as esferas governamentais.</p>
+          <p className="text-white/75 font-medium mt-2 sm:mt-3 text-center text-sm sm:text-base">Atendimento em todas as esferas governamentais.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 mt-10 sm:mt-14">
             {orgaosData.map((o, i) => (
               <div key={o.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 flex items-center gap-4 sm:gap-5 cursor-default hover:bg-white/10 hover:border-[#F97316]/40 transition-all duration-300`}>
