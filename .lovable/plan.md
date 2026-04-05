@@ -1,52 +1,19 @@
 
-# Plan10 Saúde — Landing Page Institucional
 
-## Visão Geral
-Landing page institucional completa para a Plan10 Saúde, parceira credenciada da GEAP, voltada a órgãos públicos. Página única, sem roteamento, com 11 seções responsivas.
+## Problem
 
-## Preparação
-- Copiar os logos enviados (Plan10 e GEAP Saúde) para a pasta `public/`
-- Configurar design system com paleta Navy/Laranja/Verde e fontes Merriweather + Inter
+The logos card in "Por que contratar..." is invisible because both the section background AND the card background are `#F0F5FF` — they blend together, making the card look white. Additionally, the logos use `mixBlendMode: 'screen'` which washes out the colors on light backgrounds.
 
-## Estrutura da Página (componente único em Index.tsx)
+## Solution — 2 changes in `src/pages/Index.tsx`
 
-### 1. Header Sticky
-- Logo Plan10 (esquerda), GEAP SVG inline (centro), nav links + CTA WhatsApp (direita)
-- Menu hamburger mobile com drawer via useState
+### 1. Card background: change to `bg-white`
+Since the section already has a `#F0F5FF` background, the card needs a contrasting color. Change the card div (line 491) from `bg-[#F0F5FF]` to `bg-white`. This mirrors the pattern in #beneficios where the section is `bg-white` and the card is `bg-[#F0F5FF]` — always contrasting.
 
-### 2. Hero
-- Gradiente navy profundo com padrão geométrico SVG
-- Badge laranja, título Merriweather, 4 bullets ✅, 3 CTAs (WhatsApp + âncora)
+### 2. Logo blend mode: change from `'screen'` to `'multiply'`
+On both logos (lines 498 and 509), change `mixBlendMode: 'screen'` to `mixBlendMode: 'multiply'`. This displays logos in their original colors on light backgrounds, matching how the GEAP logo is rendered in the #beneficios card.
 
-### 3. Por que escolher a GEAP (id="beneficios")
-- 6 cards com borda superior verde, emojis, grid 3 colunas
+### Result
+- Card visually distinct with white background against the blue-tinted section
+- Both logos displayed in their original colors
+- Consistent visual pattern across both sections (card always contrasts with section)
 
-### 4. Diferenciais Exclusivos
-- Fundo azul claro, 6 features centralizadas com ícones em cards brancos
-
-### 5. Coberturas e Benefícios (id="coberturas")
-- 3 cards (Médica, Preventiva, Farmacêutica) + banner navy informativo
-
-### 6. Para Quais Órgãos (id="orgaos")
-- 9 cards com emojis (Prefeituras, Câmaras, Autarquias, etc.) + CTA WhatsApp
-
-### 7. Como Funciona a Contratação
-- Stepper horizontal (5 etapas) com linha conectora laranja, responsivo vertical no mobile
-
-### 8. Por que Plan10 Saúde
-- 3 métricas grandes (+15 anos, +200 órgãos, +50 mil vidas) + 6 tags verdes de diferenciais
-
-### 9. Formulário (id="formulario")
-- 8 campos + select + textarea + checkbox LGPD, submit abre WhatsApp
-
-### 10. FAQ
-- Accordion com 19 perguntas, chevron laranja animado, controlado via useState
-
-### 11. Rodapé
-- Fundo navy escuro, 3 logos em branco (invert), contato, endereço, créditos
-
-## Comportamento
-- Scroll suave via CSS `scroll-behavior: smooth`
-- Todos CTAs WhatsApp: `wa.me/5511938043333`
-- Zero dependências externas além de React + Tailwind
-- 100% responsivo mobile-first
