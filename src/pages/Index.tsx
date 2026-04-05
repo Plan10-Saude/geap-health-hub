@@ -490,22 +490,22 @@ const Index = () => {
           <div className="flex flex-col items-center gap-4 mb-6 sm:mb-8">
             <div className="flex flex-col items-center text-center gap-4 bg-[#F0F5FF] rounded-2xl px-8 sm:px-12 py-6 border border-[#1B3461]/10 shadow-sm mx-auto w-fit max-w-[90%]">
               {/* Logos Plan Saúde × GEAP Saúde */}
-              <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
+              <div className="flex flex-row items-center justify-center gap-3 flex-nowrap">
                 <img
                   src="/logo-plan-saude.png"
                   alt="Plan Saúde"
-                  className="h-12 sm:h-14 w-auto object-contain"
+                  className="h-9 sm:h-14 w-auto object-contain flex-shrink-0 max-w-[100px] sm:max-w-[160px]"
                   style={{ mixBlendMode: 'multiply' }}
                 />
                 <div className="flex flex-col items-center gap-1">
-                  <div className="h-8 w-px bg-[#1B3461]/20" />
+                  <div className="h-6 sm:h-8 w-px bg-[#1B3461]/20" />
                   <span className="text-[#1B3461]/40 text-xs">×</span>
-                  <div className="h-8 w-px bg-[#1B3461]/20" />
+                  <div className="h-6 sm:h-8 w-px bg-[#1B3461]/20" />
                 </div>
                 <img
                   src="/logo-geap-saude.png"
                   alt="GEAP Saúde"
-                  className="h-12 sm:h-14 w-auto object-contain"
+                  className="h-9 sm:h-14 w-auto object-contain flex-shrink-0 max-w-[120px] sm:max-w-[180px]"
                   style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
