@@ -250,10 +250,10 @@ const Index = () => {
       </header>
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
+      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
         <img src="/familia-hero.jpg" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(9,25,60,0.92) 0%, rgba(13,31,74,0.88) 40%, rgba(13,31,74,0.4) 70%, transparent 100%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 w-full flex flex-col md:grid md:grid-cols-2 gap-8 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16 w-full flex flex-col md:grid md:grid-cols-2 gap-8 items-center">
           <div className="text-left">
             <div className="scroll-reveal inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/40 text-[#F97316] rounded-full text-xs px-3 py-1 sm:px-4 sm:py-1.5 mb-4 sm:mb-6 font-semibold">
               ⭐ GEAP desde 1945 · Parceiro Credenciado Oficial
@@ -298,7 +298,7 @@ const Index = () => {
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">
             Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 mt-2 sm:mt-3 text-center">Diferenciais que só um plano oficial do servidor público pode oferecer.</p>
+          <p className="text-sm sm:text-base text-gray-600 font-medium mt-2 sm:mt-3 text-center">Um plano criado para o servidor público, com benefícios que o mercado privado não oferece.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14">
             {beneficios.map((b, i) => (
               <div key={b.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-5 sm:p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group`}>
@@ -337,7 +337,7 @@ const Index = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-8" style={{ background: 'linear-gradient(135deg, #0D1F4A 0%, #1B3461 100%)' }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-white text-center">Diferenciais que só a GEAP oferece</h2>
-          <p className="text-white/60 mt-2 sm:mt-3 text-center text-sm sm:text-base">Benefícios exclusivos para cuidar dos servidores e seus dependentes.</p>
+          <p className="text-white/75 font-medium mt-2 sm:mt-3 text-center text-sm sm:text-base">Serviços exclusivos para cuidar dos servidores e seus dependentes.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mt-10 sm:mt-14">
             {diferenciais.map((d, i) => (
               <div key={d.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift group flex flex-col items-center text-center p-5 sm:p-7 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#F97316]/40 transition-all duration-300 cursor-default`}>
@@ -356,7 +356,7 @@ const Index = () => {
       <section id="coberturas" className="bg-white py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Coberturas e Benefícios</h2>
-          <p className="text-gray-500 mt-2 sm:mt-3 text-center text-sm sm:text-base">Tudo o que seu órgão precisa para cuidar da saúde dos colaboradores.</p>
+          <p className="text-gray-600 font-medium mt-2 sm:mt-3 text-center text-sm sm:text-base">Diferenciais que só um plano oficial do servidor público pode oferecer.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mt-10 sm:mt-14">
             {coberturas.map((c, i) => (
               <div key={c.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100`}>
@@ -392,7 +392,7 @@ const Index = () => {
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-white text-center">
             Para quais órgãos a <span style={{ color: '#F97316' }}>GEAP é indicada</span>
           </h2>
-          <p className="text-white/60 mt-2 sm:mt-3 text-center text-sm sm:text-base">Atendimento em todas as esferas governamentais.</p>
+          <p className="text-white/75 font-medium mt-2 sm:mt-3 text-center text-sm sm:text-base">Atendimento em todas as esferas governamentais.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 mt-10 sm:mt-14">
             {orgaosData.map((o, i) => (
               <div key={o.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 flex items-center gap-4 sm:gap-5 cursor-default hover:bg-white/10 hover:border-[#F97316]/40 transition-all duration-300`}>
@@ -416,7 +416,7 @@ const Index = () => {
       {/* ===== CTA INTERMEDIÁRIO ===== */}
       <div className="py-12 sm:py-14 px-5 sm:px-8 text-center" style={{ background: "linear-gradient(to right, #1B3461, #1B5FAA)" }}>
         <h2 className="scroll-reveal font-display text-xl sm:text-3xl font-bold text-white leading-snug">Ainda não tem um plano de saúde de qualidade para os servidores?</h2>
-        <p className="text-white/80 mt-2 sm:mt-3 text-sm sm:text-lg">A apresentação é gratuita. O processo é simples. A diferença é real.</p>
+        <p className="text-white/80 font-medium mt-2 sm:mt-3 text-sm sm:text-lg">A apresentação é gratuita. O processo é simples. A diferença é real.</p>
         <a href={WA} target="_blank" rel="noopener noreferrer" className="hover-glow inline-block mt-6 sm:mt-8 bg-[#F97316] hover:bg-[#ea6c0a] text-white font-bold text-sm sm:text-base px-7 sm:px-10 py-3 sm:py-4 rounded-xl shadow-xl transition whitespace-nowrap">
           Quero Uma Apresentação Gratuita →
         </a>
@@ -427,7 +427,7 @@ const Index = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-8 text-white" style={{ background: "linear-gradient(135deg, #0D1F4A, #1B5FAA)" }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-white text-center">Como Funciona a Contratação</h2>
-          <p className="text-white/70 mt-2 sm:mt-3 text-sm sm:text-base text-center">Processo simples e eficiente para seu órgão aderir ao plano de saúde.</p>
+          <p className="text-white/80 font-medium mt-2 sm:mt-3 text-sm sm:text-base text-center">Processo simples e eficiente para seu órgão aderir ao plano de saúde.</p>
 
           {/* Desktop stepper */}
           <div className="hidden md:flex relative justify-between items-start max-w-5xl mx-auto mt-12 sm:mt-16">
@@ -442,13 +442,16 @@ const Index = () => {
           </div>
 
           {/* Mobile stepper */}
-          <div className="flex flex-col md:hidden gap-6 max-w-sm mx-auto mt-10">
-            {steps.map((s) => (
-              <div key={s.n} className="scroll-reveal flex items-start gap-4 z-10">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#F97316] text-[#1B3461] font-black text-base sm:text-lg flex items-center justify-center shadow-lg flex-shrink-0">{s.n}</div>
-                <div className="flex flex-col">
+          <div className="flex flex-col md:hidden gap-0 max-w-xs mx-auto mt-8 w-full">
+            {steps.map((s, idx) => (
+              <div key={s.n} className="scroll-reveal flex items-start gap-4 relative pb-8 last:pb-0">
+                {idx < steps.length - 1 && (
+                  <div className="absolute left-5 top-10 bottom-0 w-0.5 bg-[#F97316]/30" />
+                )}
+                <div className="w-10 h-10 rounded-full bg-[#F97316] text-[#1B3461] font-black text-base flex items-center justify-center shadow-lg flex-shrink-0 z-10 relative">{s.n}</div>
+                <div className="flex flex-col pt-1">
                   <p className="font-bold text-white text-sm leading-snug">{s.title}</p>
-                  <p className="text-white/70 text-xs mt-1">{s.desc}</p>
+                  <p className="text-white/60 text-xs mt-1 leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -471,7 +474,7 @@ const Index = () => {
             <div className="h-px w-12 bg-[#F97316]" />
           </div>
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
-          <p className="text-gray-500 mt-2 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
+          <p className="text-gray-600 font-medium mt-2 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14 max-w-4xl mx-auto">
             {[
               { num: "+15", label: "Anos de Experiência", desc: "Referência em planos coletivos para o setor público" },
@@ -580,7 +583,7 @@ const Index = () => {
       <section id="formulario" className="py-16 sm:py-24 px-4 sm:px-8" style={{ backgroundColor: "#F0F5FF" }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Solicite uma Apresentação Institucional para seu Órgão</h2>
-          <p className="text-gray-500 mt-2 text-sm sm:text-base text-center">Preencha o formulário e um consultor especializado entrará em contato em até 24h.</p>
+          <p className="text-gray-600 font-medium mt-2 text-sm sm:text-base text-center">Preencha o formulário e um consultor especializado entrará em contato em até 24h.</p>
           <div className="max-w-xl sm:max-w-2xl mx-auto bg-[#F97316] rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center text-white font-semibold text-xs sm:text-sm mb-5 sm:mb-6 mt-10 sm:mt-12">
             Vagas limitadas para apresentações este mês — garanta a sua agora
           </div>
@@ -645,7 +648,7 @@ const Index = () => {
       <section className="bg-white py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Dúvidas Frequentes</h2>
-          <p className="text-gray-500 mt-2 sm:mt-3 text-center text-sm sm:text-base">Encontre respostas para perguntas comuns sobre o convênio.</p>
+          <p className="text-gray-600 font-medium mt-2 sm:mt-3 text-center text-sm sm:text-base">Encontre respostas para perguntas comuns sobre o convênio.</p>
           <div className="max-w-2xl sm:max-w-3xl mx-auto mt-10 sm:mt-14 space-y-3">
             {faqTemas.map((tema, tIdx) => (
               <div key={tIdx}>
