@@ -295,11 +295,11 @@ const Index = () => {
       {/* ===== BENEFÍCIOS ===== */}
       <section id="beneficios" className="bg-white py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">
+          <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center mb-3 sm:mb-4">
             Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 font-medium mt-2 sm:mt-3 text-center">Um plano criado para o servidor público, com benefícios que o mercado privado não oferece.</p>
-          <div className="flex justify-center mb-8">
+          <p className="text-sm sm:text-base text-gray-600 font-medium mb-6 sm:mb-8 text-center">Um plano criado para o servidor público, com benefícios que o mercado privado não oferece.</p>
+          <div className="flex justify-center">
             <div className="inline-flex flex-col items-center gap-3 bg-[#F0F5FF] rounded-2xl px-10 py-5 border border-[#1B3461]/10 shadow-sm">
               <img
                 src="/logo-geap-saude.png"
@@ -485,9 +485,9 @@ const Index = () => {
       {/* ===== POR QUE PLAN10 ===== */}
       <section className="py-16 sm:py-24 px-4 sm:px-8" style={{ backgroundColor: '#F0F5FF' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">Por que contratar o plano GEAP com a Plan Saúde?</h2>
-          <p className="text-gray-600 font-medium mt-2 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
-          <div className="flex flex-col items-center gap-4 mb-6">
+          <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center mb-3 sm:mb-4">Por que contratar o plano GEAP com a Plan Saúde?</h2>
+          <p className="text-gray-600 font-medium mb-6 sm:mb-8 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
+          <div className="flex flex-col items-center gap-4 mb-6 sm:mb-8">
             {/* Logos lado a lado */}
             <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
               <img
