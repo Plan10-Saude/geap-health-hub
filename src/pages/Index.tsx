@@ -298,7 +298,7 @@ const Index = () => {
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center">
             Por que escolher a <span style={{ color: "#F97316" }}>GEAP</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 mt-2 sm:mt-3 text-center">Diferenciais que só um plano oficial do servidor público pode oferecer.</p>
+          <p className="text-sm sm:text-base text-gray-600 font-medium mt-2 sm:mt-3 text-center">Um plano criado para o servidor público, com benefícios que o mercado privado não oferece.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14">
             {beneficios.map((b, i) => (
               <div key={b.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-5 sm:p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group`}>
