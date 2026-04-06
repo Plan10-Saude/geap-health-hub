@@ -244,8 +244,11 @@ const Index = () => {
       <header className="sticky top-0 z-50 w-full overflow-hidden"
         style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 60%, #1B5FAA 100%)' }}>
         <div className="flex items-center justify-center gap-8 sm:gap-16 px-4 h-14 sm:h-20 w-full overflow-hidden">
-          <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-7 sm:h-11 w-auto object-contain flex-shrink-0 max-w-[120px] sm:max-w-[180px]" style={{ mixBlendMode: 'screen' }} />
-          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-7 sm:h-10 w-auto object-contain flex-shrink-0 max-w-[110px] sm:max-w-[160px]" style={{ filter: 'brightness(0) invert(1)', opacity: 0.93 }} />
+          <div className="flex flex-col items-center gap-0.5 flex-shrink-0">
+            <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-7 sm:h-10 w-auto object-contain max-w-[110px] sm:max-w-[160px]" style={{ mixBlendMode: 'screen' }} />
+            <span className="text-white/80 text-[9px] sm:text-[11px] font-medium tracking-wide text-center leading-tight">O seu futuro muito mais tranquilo!</span>
+          </div>
+          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-5 sm:h-7 w-auto object-contain flex-shrink-0 max-w-[80px] sm:max-w-[110px]" style={{ filter: 'brightness(0) invert(1)', opacity: 0.93 }} />
         </div>
       </header>
 
@@ -265,10 +268,10 @@ const Index = () => {
               Contratação direta sem licitação · Rede nacional · Subsídio governamental
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-7 sm:mb-10">
-              {["Condições especiais para órgãos públicos", "Redução de carências conforme ANS", "Rede com mais de 15 mil prestadores", "Adesão facilitada para servidores e agregados"].map((t) => (
+              {["Condições especiais para órgãos públicos", "Redução de carências conforme ANS", "Rede com mais de 15 mil prestadores", "Adesão facilitada para servidores e agregados", "Contratação direta sem licitação", "Rede nacional", "Subsídio governamental"].map((t) => (
                 <div key={t} className="flex items-center gap-2 text-white text-xs sm:text-sm">
                   <CheckIcon />
-                  {t}
+                  <span className="font-semibold">{t}</span>
                 </div>
               ))}
             </div>
@@ -318,12 +321,12 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14">
             {beneficios.map((b, i) => (
-              <div key={b.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-5 sm:p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 border-t-[#22A851] group`}>
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#1B3461]/[0.08] flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-[#22A851]/15 transition-colors duration-300">
-                  {b.icon}
+              <div key={b.title} className={`scroll-reveal scroll-reveal-delay-${(i % 5) + 1} hover-lift ${b.title === "Dispensa de Licitação" ? "bg-gradient-to-br from-[#1B3461] to-[#1B5FAA] border-0" : "bg-white border border-gray-100"} rounded-xl sm:rounded-2xl p-5 sm:p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default border-t-4 ${b.title === "Dispensa de Licitação" ? "border-t-[#F97316]" : "border-t-[#22A851]"} group`}>
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl ${b.title === "Dispensa de Licitação" ? "bg-white/15" : "bg-[#1B3461]/[0.08]"} flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-[#22A851]/15 transition-colors duration-300`}>
+                  {b.title === "Dispensa de Licitação" ? <svg viewBox="0 0 24 24" className="w-6 h-6"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round"/><path d="M9 12l2 2 4-4" stroke="#22A851" strokeWidth="2" strokeLinecap="round"/></svg> : b.icon}
                 </div>
-                <h3 className="font-display font-bold text-[#1B3461] text-base mb-1 sm:mb-2">{b.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+                <h3 className={`font-display font-bold ${b.title === "Dispensa de Licitação" ? "text-white" : "text-[#1B3461]"} text-base mb-1 sm:mb-2`}>{b.title}</h3>
+                <p className={`${b.title === "Dispensa de Licitação" ? "text-white/80" : "text-gray-600"} text-sm leading-relaxed`}>{b.desc}</p>
               </div>
             ))}
           </div>
@@ -398,7 +401,7 @@ const Index = () => {
             ))}
           </div>
           <div className="mt-8 sm:mt-12 bg-[#1B3461] rounded-xl sm:rounded-2xl p-5 sm:p-8 text-center text-white text-sm sm:text-base">
-            Mais de 10 modalidades de plano disponíveis — cobertura nacional em todas as capitais e principais cidades conforme legislação da ANS.
+            Mais de 10 modalidades de planos disponíveis — cobertura nacional em todas as capitais e principais cidades conforme legislação da ANS.
           </div>
         </div>
       </section>
@@ -488,53 +491,38 @@ const Index = () => {
           <h2 className="scroll-reveal font-display text-2xl sm:text-4xl font-bold text-[#1B3461] text-center mb-3 sm:mb-4">Por que contratar o plano GEAP com a Plan Saúde?</h2>
           <p className="text-gray-600 font-medium mb-6 sm:mb-8 text-sm sm:text-base text-center">Excelência em consultoria e saúde para órgãos públicos.</p>
           <div className="flex flex-col items-center gap-4 mb-6 sm:mb-8">
-            <div className="flex flex-col items-center text-center gap-4 bg-[#F0F5FF] rounded-2xl px-8 sm:px-12 py-6 border border-[#1B3461]/10 shadow-sm mx-auto w-fit max-w-[90%]">
-              {/* Logos Plan Saúde × GEAP Saúde */}
+            {/* Card só com logos */}
+            <div className="flex flex-col items-center gap-3 bg-[#F0F5FF] rounded-2xl px-8 sm:px-12 py-5 border border-[#1B3461]/10 shadow-sm mx-auto w-fit max-w-[90%]">
               <div className="flex flex-row items-center justify-center gap-3 flex-nowrap">
                 <div className="bg-[#1B3461] rounded-xl px-3 py-2 flex items-center justify-center flex-shrink-0">
                   <img
                     src="/logo-plan-saude.png"
                     alt="Plan Saúde"
-                    className="h-9 sm:h-11 w-auto object-contain"
+                    className="h-9 sm:h-11 w-auto object-contain max-w-[100px] sm:max-w-[140px]"
                   />
                 </div>
-                <div className="flex flex-col items-center gap-1">
-                  <div className="h-6 sm:h-8 w-px bg-[#1B3461]/20" />
+                <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                  <div className="h-6 w-px bg-[#1B3461]/20" />
                   <span className="text-[#1B3461]/40 text-xs">×</span>
-                  <div className="h-6 sm:h-8 w-px bg-[#1B3461]/20" />
+                  <div className="h-6 w-px bg-[#1B3461]/20" />
                 </div>
                 <img
                   src="/logo-geap-saude.png"
                   alt="GEAP Saúde"
-                  className="h-9 sm:h-14 w-auto object-contain flex-shrink-0 max-w-[120px] sm:max-w-[180px]"
+                  className="h-8 sm:h-10 w-auto object-contain flex-shrink-0 max-w-[80px] sm:max-w-[110px]"
                   style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
-              {/* Badge Credenciado */}
-              <div className="inline-flex items-center gap-2 bg-[#22A851]/10 border border-[#22A851]/30 rounded-full px-4 py-1.5">
-                <div className="w-4 h-4 rounded-full bg-[#22A851] flex items-center justify-center flex-shrink-0">
-                  <svg width="8" height="7" viewBox="0 0 10 8" fill="none">
-                    <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <span className="text-[#22A851] font-semibold text-xs tracking-wide">
-                  Credenciado GEAP Saúde
-                </span>
-              </div>
             </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14 max-w-4xl mx-auto">
-            {[
-              { num: "+15", label: "Anos de Experiência", desc: "Referência em planos coletivos para o setor público" },
-              { num: "+200", label: "Órgãos Atendidos", desc: "Parcerias com ministérios, autarquias e tribunais" },
-              { num: "+50 Mil", label: "Vidas Atendidas", desc: "Milhares de servidores e seus familiares protegidos" },
-            ].map((m) => (
-              <div key={m.label} className="scroll-reveal bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center shadow-md border border-[#1B3461]/10">
-                <p className="text-4xl sm:text-5xl font-black text-[#F97316]">{m.num}</p>
-                <p className="font-bold text-[#1B3461] text-sm sm:text-base mt-1 sm:mt-2">{m.label}</p>
-                <p className="text-gray-500 text-xs sm:text-sm mt-1 sm:mt-2">{m.desc}</p>
+            {/* Badge fora do card */}
+            <div className="inline-flex items-center gap-2 bg-[#22A851]/10 border border-[#22A851]/30 rounded-full px-4 py-1.5">
+              <div className="w-4 h-4 rounded-full bg-[#22A851] flex items-center justify-center flex-shrink-0">
+                <svg width="8" height="7" viewBox="0 0 10 8" fill="none">
+                  <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
-            ))}
+              <span className="text-[#22A851] font-semibold text-xs tracking-wide">Credenciado GEAP Saúde</span>
+            </div>
           </div>
 
           {/* Selos de confiança */}
@@ -543,11 +531,14 @@ const Index = () => {
               <div className="flex items-center gap-1 text-[#F97316]">
                 {"★★★★★".split("").map((s, i) => <span key={i} className="text-xl">{s}</span>)}
               </div>
-              <span className="font-black text-xl sm:text-2xl text-[#1B3461] mt-1">4,9/5</span>
+              <span className="font-black text-xl sm:text-2xl text-[#1B3461] mt-1">4,8/5</span>
               <span className="text-[10px] sm:text-xs text-gray-500 mt-0.5 text-center">Avaliação dos órgãos</span>
             </div>
             <div className="scroll-reveal scroll-reveal-delay-2 hover-lift flex flex-col items-center bg-white rounded-xl sm:rounded-2xl px-4 sm:px-6 py-4 sm:py-5 shadow-sm border border-gray-100 min-w-[110px] sm:min-w-[130px]">
-              <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-8 w-auto object-contain mb-2"/>
+              <div className="flex flex-col items-center gap-1 mb-2">
+                <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-6 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
+                <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-5 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
+              </div>
               <span className="text-xs font-semibold text-[#1B3461] text-center">Credenciado pela GEAP</span>
               <div className="flex items-center gap-1 mt-1">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#22A851"/><path d="M8 12l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
@@ -754,8 +745,8 @@ const Index = () => {
       <footer className="py-12 sm:py-16 px-5 sm:px-8 pb-20 md:pb-16" style={{ backgroundColor: "#0D1F4A" }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center items-center gap-8 sm:gap-16 flex-wrap pb-8 sm:pb-10 border-b border-white/20">
-            <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-7 sm:h-10 w-auto object-contain flex-shrink-0" style={{ mixBlendMode: 'screen', opacity: 0.95 }} />
-            <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-7 sm:h-10 w-auto object-contain brightness-0 invert opacity-90 flex-shrink-0" />
+            <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-9 sm:h-12 w-auto object-contain flex-shrink-0" style={{ mixBlendMode: 'screen' }} />
+            <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-6 sm:h-8 w-auto object-contain brightness-0 invert opacity-90 flex-shrink-0" />
           </div>
           <div className="text-center text-white/70 text-xs sm:text-sm mt-6 sm:mt-8 space-y-2">
             <p>Plan Saúde By Plan Group Ltda | GEAP Autogestão em Saúde</p>
@@ -767,7 +758,7 @@ const Index = () => {
             <p className="text-white/60 text-xs leading-relaxed px-2 sm:px-0">Paulista Trianon | Av. Paulista, 1079 | 7º andar | Bela Vista | CEP 01311-200 | São Paulo | SP</p>
           </div>
           <div className="border-t border-white/10 pt-5 sm:pt-6 mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 text-white/50 text-xs text-center">
-            <p>© 2026 Plan10 Saúde · Todos os direitos reservados</p>
+            <p>© 2026 Plan Saúde · Todos os direitos reservados</p>
             <p>
               <a href="/privacidade" className="hover:text-white underline">Política de Privacidade</a> · Desenvolvido por <a href="https://nextcorporation.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-white underline">Next Corporation</a>
             </p>
