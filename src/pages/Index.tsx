@@ -244,7 +244,10 @@ const Index = () => {
       <header className="sticky top-0 z-50 w-full overflow-hidden"
         style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 60%, #1B5FAA 100%)' }}>
         <div className="flex items-center justify-center gap-8 sm:gap-16 px-4 h-14 sm:h-20 w-full overflow-hidden">
-          <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-8 sm:h-12 w-auto object-contain flex-shrink-0 max-w-[130px] sm:max-w-[190px]" style={{ mixBlendMode: 'screen' }} />
+          <div className="flex flex-col items-center gap-0.5 flex-shrink-0">
+            <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-8 sm:h-12 w-auto object-contain max-w-[130px] sm:max-w-[190px]" style={{ mixBlendMode: 'screen' }} />
+            <span className="text-white/80 text-[9px] sm:text-[11px] font-medium tracking-wide text-center leading-tight">O seu futuro muito mais tranquilo!</span>
+          </div>
           <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-5 sm:h-8 w-auto object-contain flex-shrink-0 max-w-[85px] sm:max-w-[125px]" style={{ filter: 'brightness(0) invert(1)', opacity: 0.93 }} />
         </div>
       </header>
