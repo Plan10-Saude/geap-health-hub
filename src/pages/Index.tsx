@@ -244,11 +244,8 @@ const Index = () => {
       <header className="sticky top-0 z-50 w-full overflow-hidden"
         style={{ background: 'linear-gradient(90deg, #0D1F4A 0%, #1B3461 60%, #1B5FAA 100%)' }}>
         <div className="flex items-center justify-center gap-8 sm:gap-16 px-4 h-14 sm:h-20 w-full overflow-hidden">
-          <div className="flex flex-col items-center gap-0.5 flex-shrink-0">
-            <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-7 sm:h-10 w-auto object-contain max-w-[110px] sm:max-w-[160px]" style={{ mixBlendMode: 'screen' }} />
-            <span className="text-white/80 text-[9px] sm:text-[11px] font-medium tracking-wide text-center leading-tight">O seu futuro muito mais tranquilo!</span>
-          </div>
-          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-5 sm:h-7 w-auto object-contain flex-shrink-0 max-w-[80px] sm:max-w-[110px]" style={{ filter: 'brightness(0) invert(1)', opacity: 0.93 }} />
+          <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-8 sm:h-12 w-auto object-contain flex-shrink-0 max-w-[130px] sm:max-w-[190px]" style={{ mixBlendMode: 'screen' }} />
+          <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-5 sm:h-8 w-auto object-contain flex-shrink-0 max-w-[85px] sm:max-w-[125px]" style={{ filter: 'brightness(0) invert(1)', opacity: 0.93 }} />
         </div>
       </header>
 
@@ -262,7 +259,7 @@ const Index = () => {
               O Plano de Saúde Oficial do <span style={{ color: '#F97316' }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-7 sm:mb-10">
-              {["Condições especiais para órgãos públicos", "Redução de carências conforme ANS", "Rede com mais de 15 mil prestadores", "Adesão facilitada para servidores e agregados", "Contratação direta sem licitação", "Rede nacional", "Subsídio governamental"].map((t) => (
+              {["Condições especiais para órgãos públicos", "Redução de carências conforme ANS", "Rede com mais de 15 mil prestadores", "Adesão facilitada para servidores e agregados"].map((t) => (
                 <div key={t} className="flex items-center gap-2 text-white text-xs sm:text-sm">
                   <CheckIcon />
                   <span className="font-semibold">{t}</span>
@@ -492,7 +489,7 @@ const Index = () => {
                   <img
                     src="/logo-plan-saude.png"
                     alt="Plan Saúde"
-                    className="h-9 sm:h-11 w-auto object-contain max-w-[100px] sm:max-w-[140px]"
+                    className="h-10 sm:h-12 w-auto object-contain max-w-[110px] sm:max-w-[150px]"
                   />
                 </div>
                 <div className="flex flex-col items-center gap-1 flex-shrink-0">
@@ -503,7 +500,7 @@ const Index = () => {
                 <img
                   src="/logo-geap-saude.png"
                   alt="GEAP Saúde"
-                  className="h-8 sm:h-10 w-auto object-contain flex-shrink-0 max-w-[80px] sm:max-w-[110px]"
+                  className="h-7 sm:h-8 w-auto object-contain flex-shrink-0 max-w-[70px] sm:max-w-[95px]"
                   style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
@@ -529,9 +526,12 @@ const Index = () => {
               <span className="text-[10px] sm:text-xs text-gray-500 mt-0.5 text-center">Avaliação dos órgãos</span>
             </div>
             <div className="scroll-reveal scroll-reveal-delay-2 hover-lift flex flex-col items-center bg-white rounded-xl sm:rounded-2xl px-4 sm:px-6 py-4 sm:py-5 shadow-sm border border-gray-100 min-w-[110px] sm:min-w-[130px]">
-              <div className="flex flex-col items-center gap-1 mb-2">
-                <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-6 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
-                <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-5 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
+              <div className="flex flex-row items-center justify-center gap-2 mb-2">
+                <div className="bg-[#1B3461] rounded-lg px-2 py-1 flex items-center justify-center flex-shrink-0">
+                  <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-6 w-auto object-contain" />
+                </div>
+                <span className="text-[#1B3461]/30 text-xs font-bold">+</span>
+                <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-4 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
               </div>
               <span className="text-xs font-semibold text-[#1B3461] text-center">Credenciado pela GEAP</span>
               <div className="flex items-center gap-1 mt-1">
@@ -556,7 +556,7 @@ const Index = () => {
           </div>
 
           <p className="max-w-2xl mx-auto text-center mt-4 text-gray-600 text-sm sm:text-base">
-            A Plan10 Saúde oferece consultoria gratuita e especializada para órgãos públicos, auxiliando em todas as etapas: análise técnica, apoio jurídico, comunicação interna e suporte contínuo.
+            A Plan Saúde oferece consultoria gratuita e especializada para órgãos públicos, auxiliando em todas as etapas: análise técnica, apoio jurídico, comunicação interna e suporte contínuo.
           </p>
 
           {/* Depoimento */}
@@ -739,7 +739,7 @@ const Index = () => {
       <footer className="py-12 sm:py-16 px-5 sm:px-8 pb-20 md:pb-16" style={{ backgroundColor: "#0D1F4A" }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center items-center gap-8 sm:gap-16 flex-wrap pb-8 sm:pb-10 border-b border-white/20">
-            <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-9 sm:h-12 w-auto object-contain flex-shrink-0" style={{ mixBlendMode: 'screen' }} />
+            <img src="/logo-plan-saude.png" alt="Plan Saúde" className="h-9 sm:h-12 w-auto object-contain flex-shrink-0" style={{ mixBlendMode: 'screen', opacity: 0.95 }} />
             <img src="/logo-geap-saude.png" alt="GEAP Saúde" className="h-6 sm:h-8 w-auto object-contain brightness-0 invert opacity-90 flex-shrink-0" />
           </div>
           <div className="text-center text-white/70 text-xs sm:text-sm mt-6 sm:mt-8 space-y-2">
