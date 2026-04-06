@@ -258,15 +258,9 @@ const Index = () => {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(9,25,60,0.92) 0%, rgba(13,31,74,0.88) 40%, rgba(13,31,74,0.4) 70%, transparent 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16 w-full flex flex-col md:grid md:grid-cols-2 gap-8 items-center">
           <div className="text-left">
-            <div className="scroll-reveal inline-flex items-center gap-2 bg-[#F97316]/20 border border-[#F97316]/40 text-[#F97316] rounded-full text-xs px-3 py-1 sm:px-4 sm:py-1.5 mb-4 sm:mb-6 font-semibold">
-              O seu futuro muito mais tranquilo!
-            </div>
             <h1 className="scroll-reveal scroll-reveal-delay-1 font-display font-black text-2xl sm:text-4xl md:text-5xl leading-tight text-white mb-3 sm:mb-4">
               O Plano de Saúde Oficial do <span style={{ color: '#F97316' }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
             </h1>
-            <p className="scroll-reveal scroll-reveal-delay-2 font-body text-sm sm:text-lg text-white/75 mb-6 sm:mb-8 max-w-lg">
-              Contratação direta sem licitação · Rede nacional · Subsídio governamental
-            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-7 sm:mb-10">
               {["Condições especiais para órgãos públicos", "Redução de carências conforme ANS", "Rede com mais de 15 mil prestadores", "Adesão facilitada para servidores e agregados", "Contratação direta sem licitação", "Rede nacional", "Subsídio governamental"].map((t) => (
                 <div key={t} className="flex items-center gap-2 text-white text-xs sm:text-sm">
