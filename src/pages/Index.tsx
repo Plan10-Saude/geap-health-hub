@@ -261,6 +261,35 @@ const Index = () => {
             <h1 className="scroll-reveal scroll-reveal-delay-1 font-display font-black text-2xl sm:text-4xl md:text-5xl leading-tight text-white mb-3 sm:mb-4">
               O Plano de Saúde Oficial do <span style={{ color: '#F97316' }}>Servidor Público</span> com Condições Exclusivas para Órgãos Governamentais
             </h1>
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-5 sm:mb-6 mt-5 sm:mt-6">
+              <div className="inline-flex items-center gap-2 bg-[#F97316] text-white rounded-full px-4 py-2 shadow-lg">
+                <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 flex-shrink-0">
+                  <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                <span className="text-xs sm:text-sm font-bold whitespace-nowrap">
+                  Contratação direta sem licitação
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-[#F97316] text-white rounded-full px-4 py-2 shadow-lg">
+                <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 flex-shrink-0">
+                  <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8"/>
+                  <path d="M8.5 12l2.5 2.5 4.5-4.5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                <span className="text-xs sm:text-sm font-bold whitespace-nowrap">
+                  Rede nacional
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-[#F97316] text-white rounded-full px-4 py-2 shadow-lg">
+                <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 flex-shrink-0">
+                  <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8"/>
+                  <path d="M12 6v12M9 9.5C9 8.1 10.3 7 12 7s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5S10.3 17 12 17s3-1.1 3-2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+                <span className="text-xs sm:text-sm font-bold whitespace-nowrap">
+                  Subsídio governamental
+                </span>
+              </div>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-7 sm:mb-10">
               {["Condições especiais para órgãos públicos", "Redução de carências conforme ANS", "Rede com mais de 15 mil prestadores", "Adesão facilitada para servidores e agregados"].map((t) => (
                 <div key={t} className="flex items-center gap-2 text-white text-xs sm:text-sm">
