@@ -786,7 +786,7 @@ const Index = () => {
           <div className="border-t border-white/10 pt-5 sm:pt-6 mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 text-white/50 text-xs text-center">
             <p>© 2026 Plan Saúde · Todos os direitos reservados</p>
             <p>
-              <a href="/privacidade" className="hover:text-white underline">Política de Privacidade</a> · Desenvolvido por <a href="https://nextcorporation.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-white underline">Next Corporation</a>
+              <a href="/privacidade" className="hover:text-white underline">Política de Privacidade</a> · Criado por <a href="https://www.nextassessoria.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white underline">Next Assessoria</a>
             </p>
           </div>
         </div>
